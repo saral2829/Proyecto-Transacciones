@@ -3,11 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CreateNewCategoryComponent } from './Componente/create-new-category/create-new-category.component';
+import { FilterComponent } from './Componente/filter/filter.component';
+import { TransactionsComponent } from './Componente/transactions/transactions.component';
+import { ListTransactionsComponent } from './Componente/list-transactions/list-transactions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateNewCategoryComponent
+    CreateNewCategoryComponent,
+    FilterComponent,
+    TransactionsComponent,
+    ListTransactionsComponent
   ],
   imports: [
     BrowserModule
