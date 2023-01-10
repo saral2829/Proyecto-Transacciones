@@ -6,6 +6,7 @@ import { CreateNewCategoryComponent } from './Componente/create-new-category/cre
 import { FilterComponent } from './Componente/filter/filter.component';
 import { TransactionsComponent } from './Componente/transactions/transactions.component';
 import { ListTransactionsComponent } from './Componente/list-transactions/list-transactions.component';
+import { CategoryComponent } from './Componente/category/category.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ListTransactionsComponent } from './Componente/list-transactions/list-t
     FilterComponent,
     TransactionsComponent,
     ListTransactionsComponent
+    CategoryComponent
   ],
   imports: [
     BrowserModule
