@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-create-new-category',
@@ -6,9 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./create-new-category.component.css'],
 })
 export class CreateNewCategoryComponent {
-  visible: boolean = true;
+  @Input() visible: boolean = false;
 
-  onClose(): void {
-    this.visible = false;
+  @Output() onClose = new EventEmitter<boolean>();
+
+  close() {
+    this.onClose.emit();
   }
 }
