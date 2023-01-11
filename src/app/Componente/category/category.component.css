@@ -1,41 +1,26 @@
 *{
     margin:0;
 }
+:host{
+    --red-color:#ec4649;
+    --purple-color:rgb(181, 45, 181);
+    --gris-color:rgba(84, 81, 81, 0.752);
+    --orange-color:#f17029;
+    --sky-blue-color:#21a6e6;
+    --blue-color:#4085f3;
+}
 
+
+/*BACKGROUND ICONOS*/
 .circle-red {
     background-color: #ec4649;
   }
-  .circle-red::before {
-    border-color: #ec4649 !important;
-  }
+  
   
   .circle-dark-orange {
     background-color: #f17029;
   }
-  .circle-dark-orange::before {
-    border-color: #f17029 !important;
-  }
-  
-  .circle-orange {
-    background-color: #eb9829;
-  }
-  .circle-orange::before {
-    border-color: #eb9829 !important;
-  }
-  
-  .circle-dark-green {
-    background-color: #23b882;
-  }
-  .circle-dark-green::before {
-    border-color: #23b882 !important;
-  }
-  
-  .circle-green {
-    background-color: #25b7a6;
-  }
-  .circle-green::before {
-    border-color: #25b7a6 !important;
-  }
+ 
   
   .circle-sky-blue {
     background-color: #20b6d2;
@@ -60,9 +45,63 @@
   .circle-gris{
     background-color: rgba(84, 81, 81, 0.752);
   }
+  .circle-purple{
+    background-color: rgb(181, 45, 181);
+  }
 
+  /*COLOR BORDER CARDS*/
+
+  .border-red{
+    border-color:var(--red-color) !important;
+  }
+.border-gris{
+    border-color: var(--gris-color)!important;
+}
+
+.border-purple{
+    border-color: var(--purple-color)!important;
+}
+
+.border-orange{
+    border-color: var(--orange-color)!important;
+}
+
+.border-sky-blue{
+    border-color: var(--sky-blue-color) !important;
+}
+
+.border-blue{
+    border-color: var(--blue-color)!important;
+}
+
+.border-plus{
+    border-style:dashed !important;
+    border-color: var(--gris-color)!important;
+}
+/*Estilo iconos*/
 
 .icon-cat{
     border-radius: 35px;
     padding: 15px;
+
+}
+.icon-cat svg{
+    color:white;
+}
+
+.icon-cat-plus svg{
+    color: var(--gris-color);
+}
+
+/*Estilos de texto*/
+
+.text-category{
+    font-size: 1.0rem;
+    color:var(--gris-color);
+}
+.mont-category small{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color:rgba(43, 40, 40, 0.858);
+   
 }
