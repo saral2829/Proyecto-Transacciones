@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -14,13 +15,11 @@ import { CategoryComponent } from './Componente/category/category.component';
     CreateNewCategoryComponent,
     FilterComponent,
     TransactionsComponent,
-    ListTransactionsComponent
-    CategoryComponent
+    ListTransactionsComponent,
+    CategoryComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
