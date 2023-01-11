@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.sidebar {
+  position: fixed;
+  background-color: rgb(243, 244, 246);
+  width: 280px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: #4c555e;
+}
+.sidebar h3 {
+  padding: 20px;
+  font-weight: bold;
+}
+.sidebar ul li {
+  margin: 0 14px;
+}
+.sidebar ul li a {
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show .nav-link {
+  background-color: rgb(244, 114, 182);
+  color: #fff;
+}
+span {
+  color: #4c555e;
+}
+.bi {
+  vertical-align: -0.125em;
+}
+hr {
+  margin: 0 1rem;
+  position: relative;
+  top: 34em;
+}
+.content {
+  padding: 20px;
+  position: relative;
+  top: 34em;
+}
+.content p {
+  margin-bottom: 12px;
+}
+
