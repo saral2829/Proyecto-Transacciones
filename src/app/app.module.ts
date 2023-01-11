@@ -14,7 +14,7 @@ import { CategoryComponent } from './Componente/category/category.component';
     CreateNewCategoryComponent,
     FilterComponent,
     TransactionsComponent,
-    ListTransactionsComponent
+    ListTransactionsComponent,
     CategoryComponent
   ],
   imports: [

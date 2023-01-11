@@ -1,0 +1,9 @@
+*{
+    margin:0;
+}
+
+.icon-cat{
+    border-radius: 25px;
+    background-color: rgba(84, 81, 81, 0.752);
+    padding: 10px;
+}
