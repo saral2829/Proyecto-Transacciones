@@ -1,13 +1,20 @@
-<div class="popup">
-  <div class="popup-backdrop"></div>
+<div class="popup" [ngClass]="{ visible: visible }">
+  <div class="popup-backdrop" (click)="close()"></div>
   <div class="popup-content">
     <div class="popup-header">
       <h2 class="mb-3">New category</h2>
-      <button type="button" class="btn-close mb-3"></button>
+      <button type="button" class="btn-close mb-3" (click)="close()"></button>
     </div>
     <div class="popup-body">
       <label for="name" class="text-uppercase">Name</label>
       <input type="text" name="name" />
+
+      <select name="" id="" class="mb-4">
+        <option value="">Selecciona un tipo</option>
+        <option value="">Expense</option>
+        <option value="">Income</option>
+      </select>
+
       <p class="text-uppercase mb-2">Color</p>
       <div class="paleta">
         <button class="circle-color circle-red color-selected"></button>

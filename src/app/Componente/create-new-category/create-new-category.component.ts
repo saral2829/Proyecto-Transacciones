@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-create-new-category',
   templateUrl: './create-new-category.component.html',
-  styleUrls: ['./create-new-category.component.css']
+  styleUrls: ['./create-new-category.component.css'],
 })
-export class CreateNewCategoryComponent implements OnInit {
+export class CreateNewCategoryComponent {
+  @Input() visible: boolean = false;
 
-  constructor() { }
+  @Output() onClose = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
+  close() {
+    this.onClose.emit();
   }
-
 }
