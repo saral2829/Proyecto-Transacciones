@@ -1,0 +1,141 @@
+*{
+    margin:0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:host{
+    --red-color:#ec4649;
+    --purple-color:rgb(181, 45, 181);
+    --gris-color:rgba(84, 81, 81, 0.752);
+    --orange-color:#f17029;
+    --sky-blue-color:#21a6e6;
+    --blue-color:#4085f3;
+}
+
+
+/*BACKGROUND ICONOS*/
+.circle-red {
+    background-color: #ec4649;
+  }
+  
+  
+  .circle-dark-orange {
+    background-color: #f17029;
+  }
+ 
+  
+  .circle-sky-blue {
+    background-color: #20b6d2;
+  }
+  .circle-sky-blue::before {
+    border-color: #20b6d2 !important;
+  }
+  
+  .circle-dark-sky-blue {
+    background-color: #21a6e6;
+  }
+  .circle-dark-sky-blue::before {
+    border-color: #21a6e6 !important;
+  }
+  
+  .circle-blue {
+    background-color: #4085f3;
+  }
+  .circle-blue::before {
+    border-color: #4085f3 !important;
+  }
+  .circle-gris{
+    background-color: rgba(84, 81, 81, 0.752);
+  }
+  .circle-purple{
+    background-color: rgb(181, 45, 181);
+  }
+
+  /*COLOR BORDER CARDS*/
+
+  .border-red{
+    border-color:var(--red-color) !important;
+  }
+.border-gris{
+    border-color: var(--gris-color)!important;
+}
+
+.border-purple{
+    border-color: var(--purple-color)!important;
+}
+
+.border-orange{
+    border-color: var(--orange-color)!important;
+}
+
+.border-sky-blue{
+    border-color: var(--sky-blue-color) !important;
+}
+
+.border-blue{
+    border-color: var(--blue-color)!important;
+}
+
+.border-plus{
+    border-style:dashed !important;
+    border-color: var(--gris-color)!important;
+}
+/*Estilo iconos*/
+
+.icon-cat{
+    border-radius: 35px;
+    padding: 15px;
+
+}
+.icon-cat svg{
+    color:white;
+}
+
+.icon-cat-plus svg{
+    color: var(--gris-color);
+}
+
+/*Estilos de texto*/
+.text-title-category{
+    font-size:1.8rem;
+    font-weight: 800;
+    color:black;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.text-category{
+    font-size: 1.0rem;
+    color:var(--gris-color);
+    font-family: 'Poppins', sans-serif;
+}
+.mont-category small{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color:rgba(43, 40, 40, 0.858);
+    font-family: 'Poppins', sans-serif;
+   
+}
+ 
+/*Estilos de nav*/
+.nav-item{
+margin:20px 0 0 20px;
+}
+.nav-item a{
+    text-decoration: none;
+    color: var(--gris-color);
+    font-size: 1.2rem;
+    padding: 0px 0px 0px 20px;  
+    font-family: 'Poppins', sans-serif;
+}
+.nav-item a:hover{
+    /* background-color: red !important; */
+    /* border-bottom: #4085f3; */
+    border-bottom: solid 5px  #d92d78 !important;
+    color: #d92d78;
+}
+
+.return--button, .next--button{
+    border: var(--gris-color) ;
+    border-radius: 18px;
+    padding: 12px;
+}
