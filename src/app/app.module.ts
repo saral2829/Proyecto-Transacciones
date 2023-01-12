@@ -20,7 +20,10 @@ import { SidebardComponent } from './Componente/sidebard/sidebard.component';
     CategoryComponent,
     SidebardComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
