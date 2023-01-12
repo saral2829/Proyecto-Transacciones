@@ -9,6 +9,7 @@
     --orange-color:#f17029;
     --sky-blue-color:#21a6e6;
     --blue-color:#4085f3;
+    --gris-light-color:rgba(129, 126, 126, 0.338);
 }
 
 
@@ -108,13 +109,27 @@
     color:var(--gris-color);
     font-family: 'Poppins', sans-serif;
 }
-.mont-category small{
+.text-tot{
+  font-size: 0.8rem;
+  color:var(--gris-color);
+  font-family: 'Poppins', sans-serif;
+}
+.mont-category span{
     font-size: 1.8rem;
     font-weight: 600;
     color:rgba(43, 40, 40, 0.858);
     font-family: 'Poppins', sans-serif;
    
 }
+
+.mont-expenses{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color:var(--red-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+
  
 /*Estilos de nav*/
 .nav-item{
@@ -134,8 +149,28 @@ margin:20px 0 0 20px;
     color: #d92d78;
 }
 
+/*Estilos de botones return y next*/
 .return--button, .next--button{
     border: var(--gris-color) ;
-    border-radius: 18px;
-    padding: 12px;
+    border-radius: 23px;
+    padding: 8px 10px 8px 10px;
 }
+
+.return--button:hover, .next--button:hover{
+    box-shadow: rgba(101, 98, 98, 0.35) 5px 2px 5px 2px;
+}
+
+/*Estilo de mes*/
+.month-category{
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    
+}
+.month-category p{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 1.0rem;
+   font-weight: 500; 
+   padding: 0px 10px 0px 10px;
+}
+
