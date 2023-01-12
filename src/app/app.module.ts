@@ -8,6 +8,7 @@ import { TransactionsComponent } from './Componente/transactions/transactions.co
 import { ListTransactionsComponent } from './Componente/list-transactions/list-transactions.component';
 import { CategoryComponent } from './Componente/category/category.component';
 import { SidebardComponent } from './Componente/sidebard/sidebard.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SidebardComponent } from './Componente/sidebard/sidebard.component';
     SidebardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
