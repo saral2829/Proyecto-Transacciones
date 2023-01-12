@@ -292,6 +292,46 @@
     </div>
 
     <div class="row">
+      <div
+        *ngFor="let category of categories"
+        class="col-xl-4 col-md-6 mb-4"
+        [ngClass]="'color-' + category.color"
+      >
+        <div class="card border-center-info shadow h-100 py-2">
+          <div class="card-body">
+            <div class="d-flex justify-content-left align-items-center">
+              <div class="px-3 icon-cat">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="currentColor"
+                  class="bi bi-journal-bookmark-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"
+                  />
+                  <path
+                    d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"
+                  />
+                  <path
+                    d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"
+                  />
+                </svg>
+              </div>
+              <div class="px-3">
+                <h3 class="text-category">{{ category.name }}</h3>
+                <p class="mont-category">
+                  <span>${{ category.total }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="col-xl-4 col-md-6 mb-4">
         <div
           class="card border-center-info shadow h-100 py-2 w-100 border-plus"
@@ -315,12 +355,10 @@
                   </svg>
                 </div>
               </div>
-            
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </div>
@@ -328,4 +366,5 @@
 <app-create-new-category
   [visible]="visibleNewCategoryPopup"
   (onClose)="closePopup()"
+  (onCreate)="createCategory($event)"
 ></app-create-new-category>
