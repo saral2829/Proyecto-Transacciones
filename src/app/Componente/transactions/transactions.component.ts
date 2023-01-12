@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Transaction } from "../../models/transaction.model";
 
 @Component({
-  selector: 'app-transactions',
-  templateUrl: './transactions.component.html',
-  styleUrls: ['./transactions.component.css']
+   selector: "app-transactions",
+   templateUrl: "./transactions.component.html",
+   styleUrls: ["./transactions.component.css"],
 })
-export class TransactionsComponent implements OnInit {
+export class TransactionsComponent {
+   filtered: Array<Transaction> = [];
 
-  constructor() { }
+   constructor() {}
 
-  ngOnInit(): void {
-  }
-
+   getFilteredTransactions(transactions: Array<Transaction>) {
+      this.filtered = transactions;
+   }
 }
