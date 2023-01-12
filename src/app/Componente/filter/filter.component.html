@@ -1,65 +1,63 @@
-<p>filter works!</p>
-<div class="filter">
-  <div class="filter-content">
-    <div class="filter-header">
-      <h2 class="mb-3 filter-title">Transactions</h2>
-      <button
-        type="button"
-        class="btn-filter mb-3"
-        data-bs-toggle="collapse"
-        href="#collapseExample"
+<div class="filter-content">
+  <div class="filter-header">
+    <h2 class="mb-3 filter-title">Transactions</h2>
+    <button
+      type="button"
+      class="btn-filter mb-3"
+      data-bs-toggle="collapse"
+      href="#collapseExample"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-funnel"
+        viewBox="0 0 16 16"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-funnel"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"
-          />
-        </svg>
-      </button>
-    </div>
-    <div class="filter-body collapse" id="collapseExample">
-      <p class="mb-2">Category</p>
-      <div class="d-flex checkbox-container">
-        <div class="d-flex checkbox" *ngFor="let item of items">
-          <input
-            type="checkbox"
-            name=""
-            [(ngModel)]="item.value"
-            [ngModelOptions]="{ standalone: true }"
-          /><label>{{ item.label }}</label>
-        </div>
-      </div>
-
-      <p class="mb-2">Amount</p>
-      <div class="amount-container d-flex">
-        <div class="minimo d-flex">
-          <label for="'numberMin" class="text-uppercase">Min</label>
-          <input id="numberMin" name="numberMin" type="number" />
-        </div>
-        <div class="maximo d-flex">
-          <label for="'numberMax" class="text-uppercase">Max</label>
-          <input id="numberMax" name="numberMax" type="number" />
-        </div>
-      </div>
-      <p class="mb-2">Date</p>
-      <div class="amount-container d-flex">
-        <div class="minimo d-flex">
-          <label for="'fechaMin" class="text-uppercase">From</label>
-          <input id="fechaMin" name="fechaMin" type="date" />
-        </div>
-        <div class="maximo d-flex">
-          <label for="'fechaMax" class="text-uppercase">To</label>
-          <input id="fechaMax" name="fechaMax" type="date" />
-        </div>
-      </div>
-    </div>
-    <p class="text-uppercase mt-4 mb-2">Lista aqui</p>
-    <div class="icons"></div>
+        <path
+          d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"
+        />
+      </svg>
+    </button>
   </div>
+  <div class="filter-body collapse" id="collapseExample">
+    <p class="mb-2 subtitle">Category</p>
+    <div class="d-flex checkbox-container">
+      <div class="d-flex checkbox" *ngFor="let item of items">
+        <input
+          type="checkbox"
+          name=""
+          [(ngModel)]="item.value"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <label class="checkbox-name">{{ item.label }}</label>
+      </div>
+    </div>
+
+    <p class="mt-2 subtitle">Amount</p>
+    <div class="amount-container d-flex">
+      <div class="minimo d-flex">
+        <label for="'numberMin" class="text-uppercase">Min</label>
+        <input id="numberMin" name="numberMin" type="number" />
+      </div>
+      <div class="maximo d-flex">
+        <label for="'numberMax" class="text-uppercase">Max</label>
+        <input id="numberMax" name="numberMax" type="number" />
+      </div>
+    </div>
+    <p class="mt-2 subtitle">Date</p>
+    <div class="amount-container d-flex">
+      <div class="minimo d-flex">
+        <label for="'fechaMin" class="text-uppercase">From</label>
+        <input id="fechaMin" name="fechaMin" type="date" />
+      </div>
+      <div class="maximo d-flex">
+        <label for="'fechaMax" class="text-uppercase">To</label>
+        <input id="fechaMax" name="fechaMax" type="date" />
+      </div>
+    </div>
+  </div>
+  <p class="text-uppercase mt-4 mb-2">Lista aqui</p>
+  <div class="icons"></div>
 </div>

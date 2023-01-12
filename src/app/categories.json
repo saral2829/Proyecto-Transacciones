@@ -1,10 +1,52 @@
 {
-   "categories": [
-      { "id": 1, "name": "rent", "icon": "rent", "type": "expense" },
-      { "id": 2, "name": "salary", "icon": "salary", "type": "income" },
-      { "id": 3, "name": "transport", "icon": "transport", "type": "expense" },
-      { "id": 4, "name": "education", "icon": "education", "type": "expense" },
-      { "id": 5, "name": "groceries", "icon": "groceries", "type": "expense" },
-      { "id": 6, "name": "gifts", "icon": "gifts", "type": "income" }
-   ]
+  "categories": [
+    {
+      "id": 1,
+      "name": "Rent",
+      "icon": "rent",
+      "type": "expense",
+      "color": "gray",
+      "total": "500"
+    },
+    {
+      "id": 2,
+      "name": "Groceries",
+      "icon": "groceries",
+      "type": "expense",
+      "color": "blue",
+      "total": "100"
+    },
+    {
+      "id": 3,
+      "name": "Transport",
+      "icon": "transport",
+      "type": "expense",
+      "color": "orange",
+      "total": "150"
+    },
+    {
+      "id": 4,
+      "name": "Health",
+      "icon": "health",
+      "type": "income",
+      "color": "red",
+      "total": "200"
+    },
+    {
+      "id": 5,
+      "name": "Gifts",
+      "icon": "gifts",
+      "type": "income",
+      "color": "purple",
+      "total": "50"
+    },
+    {
+      "id": 6,
+      "name": "Education",
+      "icon": "education",
+      "type": "expense",
+      "color": "sky-blue",
+      "total": "250"
+    }
+  ]
 }
