@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Category } from '../../models/category';
+import { NewCategory } from 'src/app/models/new-category.model';
 
 @Component({
   selector: 'app-create-new-category',
@@ -13,14 +14,12 @@ export class CreateNewCategoryComponent {
   type: string = '';
   color: string = '';
   icon: string = '';
-  // newCategory = {
-  //   name: '',
-  //   type: '',
-  // };
+
+  newCategory!: NewCategory;
 
   @Output() onClose = new EventEmitter<boolean>();
 
-  @Output() onCreate = new EventEmitter<Category>();
+  @Output() onCreate = new EventEmitter<NewCategory>();
 
   close() {
     this.onClose.emit();
@@ -41,20 +40,24 @@ export class CreateNewCategoryComponent {
   }
 
   create(): void {
-    this.onCreate.emit({
-      id: 2,
+    this.newCategory = {
       name: this.name,
       icon: this.icon,
       type: this.type,
       color: this.color,
       total: '0',
-    });
+    };
+
+    this.onCreate.emit(this.newCategory);
 
     this.close();
 
-    console.log(this.name);
-    console.log(this.type);
-    console.log(this.color);
-    console.log(this.icon);
+    this.name = '';
+    this.type = '';
+    this.color = '';
+    this.icon = '';
+
+    console.log('---------------------------');
+    console.log(this.newCategory);
   }
 }
