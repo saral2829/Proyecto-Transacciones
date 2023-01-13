@@ -53,6 +53,7 @@ export class ListTransactionsComponent {
                   icon: category.icon,
                   amount: transaction.amount,
                   type: category.type,
+                  color: category.color,
                };
             }),
          };
