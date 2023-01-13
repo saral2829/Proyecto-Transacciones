@@ -1,14 +1,17 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+
 
 import { Category } from '../../models/category';
 import { NewCategory } from 'src/app/models/new-category.model';
 
+
 @Component({
-  selector: 'app-create-new-category',
-  templateUrl: './create-new-category.component.html',
-  styleUrls: ['./create-new-category.component.css'],
+   selector: "app-create-new-category",
+   templateUrl: "./create-new-category.component.html",
+   styleUrls: ["./create-new-category.component.css"],
 })
 export class CreateNewCategoryComponent {
+
   @Input() visible: boolean = false;
   name: string = '';
   type: string = '';
@@ -60,4 +63,5 @@ export class CreateNewCategoryComponent {
     console.log('---------------------------');
     console.log(this.newCategory);
   }
+
 }

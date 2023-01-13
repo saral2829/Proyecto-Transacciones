@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+
 
 import { Category } from '../../models/category';
 import { NewCategory } from 'src/app/models/new-category.model';
 
+
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css'],
+   selector: "app-category",
+   templateUrl: "./category.component.html",
+   styleUrls: ["./category.component.css"],
 })
 export class CategoryComponent {
-  visibleNewCategoryPopup: boolean = false;
+   visibleNewCategoryPopup: boolean = false;
 
   categories: Array<Category> = [
     {
@@ -61,16 +63,18 @@ export class CategoryComponent {
       total: '250',
     },
   ];
+  
+   addCategory(): void {
+      this.visibleNewCategoryPopup = true;
+   }
 
-  addCategory(): void {
-    this.visibleNewCategoryPopup = true;
-  }
+   closePopup(): void {
+      this.visibleNewCategoryPopup = false;
+   }
 
-  closePopup(): void {
-    this.visibleNewCategoryPopup = false;
-  }
 
   createCategory(categorie: NewCategory): void {
     this.categories.push({ ...categorie, id: this.categories.length + 1 });
   }
+
 }
