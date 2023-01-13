@@ -18,12 +18,9 @@ import { SidebardComponent } from './Componente/sidebard/sidebard.component';
     TransactionsComponent,
     ListTransactionsComponent,
     CategoryComponent,
-    SidebardComponent
+    SidebardComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
