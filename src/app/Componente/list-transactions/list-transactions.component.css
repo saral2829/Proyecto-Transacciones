@@ -58,5 +58,7 @@
 
 .test {
   overflow: scroll;
-  max-height: 600px;
+  max-height: 900px;
+  position: relative;
+  bottom: 0;
 }
