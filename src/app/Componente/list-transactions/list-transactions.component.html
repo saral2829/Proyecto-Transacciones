@@ -1,16 +1,17 @@
-<ul>
-   <li *ngFor="let date_transactions of transactions_by_date">
-      <p>Transaction: {{date_transactions.date}}, Total: {{getTotal(date_transactions.transactions)}}</p>
-      <ul>
-         <li *ngFor="let transaction of date_transactions.transactions">
-            <p style="font-size: 14px;">
-               Category: {{transaction.category}},
-               Icon: {{transaction.icon}},
-               Amount: {{transaction.amount}},
-               Type: {{transaction.type}},
-               Color: {{transaction.color}}
-            </p>
-         </li>
-      </ul>
-   </li>
+<ul class="test">
+  <li *ngFor="let date_transactions of transactions_by_date">
+    <p>
+      Transaction: {{ date_transactions.date }}, Total:
+      {{ getTotal(date_transactions.transactions) }}
+    </p>
+    <ul>
+      <li *ngFor="let transaction of date_transactions.transactions">
+        <p style="font-size: 14px">
+          Category: {{ transaction.category }}, Icon: {{ transaction.icon }},
+          Amount: {{ transaction.amount }}, Type: {{ transaction.type }}, Color:
+          {{ transaction.color }}
+        </p>
+      </li>
+    </ul>
+  </li>
 </ul>
