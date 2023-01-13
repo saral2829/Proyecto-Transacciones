@@ -7,43 +7,90 @@
     </div>
     <div class="popup-body">
       <label for="name" class="text-uppercase">Name</label>
-      <input type="text" name="name" />
+      <input type="text" name="name" [(ngModel)]="name" />
 
-      <select name="" id="" class="mb-4">
+      <!-- <select name="type" id="" class="mb-4" [(ngModel)]="type">
         <option value="">Selecciona un tipo</option>
-        <option value="">Expense</option>
-        <option value="">Income</option>
-      </select>
+        <option value="expense">Expense</option>
+        <option value="income">Income</option>
+      </select> -->
+      <div class="content-type">
+        <div>
+          <input id="expense" type="radio" value="expense" [(ngModel)]="type" />
+          <label for="expense">Expense</label>
+        </div>
+        <div>
+          <input id="income" type="radio" value="income" [(ngModel)]="type" />
+          <label for="income">Income</label>
+        </div>
+      </div>
 
       <p class="text-uppercase mb-2">Color</p>
       <div class="paleta">
-        <button class="circle-color circle-red color-selected"></button>
-        <button class="circle-color circle-dark-orange"></button>
-        <button class="circle-color circle-orange"></button>
-        <button class="circle-color circle-dark-green"></button>
-        <button class="circle-color circle-green"></button>
-        <button class="circle-color circle-sky-blue"></button>
-        <button class="circle-color circle-dark-sky-blue"></button>
-        <button class="circle-color circle-blue"></button>
+        <button
+          class="circle-color circle-red"
+          (click)="selectColor('red')"
+          [ngClass]="{ 'color-selected': 'red' === color }"
+        ></button>
+        <button
+          class="circle-color circle-dark-orange"
+          (click)="selectColor('dark-orange')"
+          [ngClass]="{ 'color-selected': 'dark-orange' === color }"
+        ></button>
+        <button
+          class="circle-color circle-orange"
+          (click)="selectColor('orange')"
+          [ngClass]="{ 'color-selected': 'orange' === color }"
+        ></button>
+        <button
+          class="circle-color circle-dark-green"
+          (click)="selectColor('dark-green')"
+          [ngClass]="{ 'color-selected': 'dark-green' === color }"
+        ></button>
+        <button
+          class="circle-color circle-green"
+          (click)="selectColor('green')"
+          [ngClass]="{ 'color-selected': 'green' === color }"
+        ></button>
+        <button
+          class="circle-color circle-sky-blue"
+          (click)="selectColor('sky-blue')"
+          [ngClass]="{ 'color-selected': 'sky-blue' === color }"
+        ></button>
+        <button
+          class="circle-color circle-dark-sky-blue"
+          (click)="selectColor('dark-sky-blue')"
+          [ngClass]="{ 'color-selected': 'dark-sky-blue' === color }"
+        ></button>
+        <button
+          class="circle-color circle-blue"
+          (click)="selectColor('blue')"
+          [ngClass]="{ 'color-selected': 'blue' === color }"
+        ></button>
       </div>
       <p class="text-uppercase mt-4 mb-2">Icon</p>
       <div class="icons">
-        <button class="circle-icon icon-selected">
+        <button
+          class="circle-icon"
+          (click)="selectIcon('rent')"
+          [ngClass]="{ 'icon-selected': 'rent' === icon }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class="bi bi-house-fill"
+            class="bi bi-bank2"
             viewBox="0 0 16 16"
           >
             <path
-              d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"
-            />
-            <path
-              d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"
+              d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z"
             />
           </svg>
         </button>
-        <button class="circle-icon">
+        <button
+          class="circle-icon"
+          (click)="selectIcon('groceries')"
+          [ngClass]="{ 'icon-selected': 'groceries' === icon }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -55,7 +102,11 @@
             />
           </svg>
         </button>
-        <button class="circle-icon">
+        <button
+          class="circle-icon"
+          (click)="selectIcon('health')"
+          [ngClass]="{ 'icon-selected': 'health' === icon }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -70,7 +121,11 @@
             />
           </svg>
         </button>
-        <button class="circle-icon">
+        <button
+          class="circle-icon"
+          (click)="selectIcon('game')"
+          [ngClass]="{ 'icon-selected': 'game' === icon }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -85,7 +140,11 @@
             />
           </svg>
         </button>
-        <button class="circle-icon">
+        <button
+          class="circle-icon"
+          (click)="selectIcon('salary')"
+          [ngClass]="{ 'icon-selected': 'salary' === icon }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -97,7 +156,11 @@
             />
           </svg>
         </button>
-        <button class="circle-icon">
+        <button
+          class="circle-icon"
+          (click)="selectIcon('education')"
+          [ngClass]="{ 'icon-selected': 'education' === icon }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -112,7 +175,11 @@
             />
           </svg>
         </button>
-        <button class="circle-icon">
+        <button
+          class="circle-icon"
+          (click)="selectIcon('transport')"
+          [ngClass]="{ 'icon-selected': 'transport' === icon }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -124,7 +191,11 @@
             />
           </svg>
         </button>
-        <button class="circle-icon">
+        <button
+          class="circle-icon"
+          (click)="selectIcon('gifts')"
+          [ngClass]="{ 'icon-selected': 'gifts' === icon }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
@@ -140,7 +211,7 @@
     </div>
 
     <div class="popup-footer">
-      <button>Create</button>
+      <button (click)="create()">Create</button>
     </div>
   </div>
 </div>

@@ -189,3 +189,24 @@ p {
   padding: 5px 0;
   width: 100%;
 }
+
+.content-type {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.content-type label {
+  font-size: 1rem;
+}
+
+.content-type input {
+  display: inline-block;
+  height: 26px;
+}
+
+.content-type div {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}

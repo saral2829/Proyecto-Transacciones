@@ -3,6 +3,15 @@
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 :host {
+  --red: #ec4649;
+  --dark-orange: #f17029;
+  --orange: #eb9829;
+  --dark-green: #23b882;
+  --green: #25b7a6;
+  --sky-blue: #20b6d2;
+  --dark-sky-blue: #21a6e6;
+  --blue: #4085f3;
+
   --red-color: #ec4649;
   --purple-color: rgb(181, 45, 181);
   --gris-color: rgba(84, 81, 81, 0.752);
@@ -11,6 +20,74 @@
   --blue-color: #4085f3;
   --gris-light-color: rgba(129, 126, 126, 0.338);
 }
+
+/* ******* */
+
+/* red */
+.color-red .card {
+  border-color: var(--red);
+}
+.color-red .icon-cat {
+  background-color: var(--red);
+}
+
+/* dark-orange */
+.color-dark-orange .card {
+  border-color: var(--dark-orange);
+}
+.color-dark-orange .icon-cat {
+  background-color: var(--dark-orange);
+}
+
+/* orange */
+.color-orange .card {
+  border-color: var(--orange);
+}
+.color-orange .icon-cat {
+  background-color: var(--orange);
+}
+
+/* dark-green */
+.color-dark-green .card {
+  border-color: var(--dark-green);
+}
+.color-dark-green .icon-cat {
+  background-color: var(--dark-green);
+}
+
+/* green */
+.color-green .card {
+  border-color: var(--green);
+}
+.color-green .icon-cat {
+  background-color: var(--green);
+}
+
+/* sky-blue */
+.color-sky-blue .card {
+  border-color: var(--sky-blue);
+}
+.color-sky-blue .icon-cat {
+  background-color: var(--sky-blue);
+}
+
+/* dark-sky-blue */
+.color-dark-sky-blue .card {
+  border-color: var(--dark-sky-blue);
+}
+.color-dark-sky-blue .icon-cat {
+  background-color: var(--dark-sky-blue);
+}
+
+/* blue */
+.color-blue .card {
+  border-color: var(--blue);
+}
+.color-blue .icon-cat {
+  background-color: var(--blue);
+}
+
+/* ******* */
 
 /*BACKGROUND ICONOS*/
 .circle-red {
@@ -83,8 +160,17 @@
   border-radius: 35px;
   padding: 15px;
 }
+
 .icon-cat svg {
-  color: white;
+  color: white !important;
+  height: 30px;
+  width: 30px;
+}
+
+.icon-cat img {
+  filter: invert(1);
+  height: 30px;
+  width: 30px;
 }
 
 .icon-cat-plus svg {
