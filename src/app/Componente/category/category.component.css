@@ -160,8 +160,17 @@
   border-radius: 35px;
   padding: 15px;
 }
+
 .icon-cat svg {
-  color: white;
+  color: white !important;
+  height: 30px;
+  width: 30px;
+}
+
+.icon-cat img {
+  filter: invert(1);
+  height: 30px;
+  width: 30px;
 }
 
 .icon-cat-plus svg {

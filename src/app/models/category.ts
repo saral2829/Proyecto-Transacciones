@@ -2,7 +2,7 @@ export interface Category {
   id: number;
   name: string;
   icon: string;
-  type: 'expense' | 'income';
+  type: string;
   color: string;
   total: string;
 }
