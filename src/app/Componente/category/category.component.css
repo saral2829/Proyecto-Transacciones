@@ -243,6 +243,10 @@
   border-bottom: solid 5px #d92d78 !important;
   color: #d92d78;
 }
+.nav-item .expense-a{
+  border-bottom: solid 5px #d92d78 !important;
+  color: #d92d78;
+}
 
 /*Estilos de botones return y next*/
 .return--button,
