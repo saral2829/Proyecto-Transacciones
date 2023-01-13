@@ -1,16 +1,22 @@
-<ul>
-   <li *ngFor="let date_transactions of transactions_by_date">
-      <p>Transaction: {{date_transactions.date}}, Total: {{getTotal(date_transactions.transactions)}}</p>
-      <ul>
-         <li *ngFor="let transaction of date_transactions.transactions">
-            <p style="font-size: 14px;">
-               Category: {{transaction.category}},
-               Icon: {{transaction.icon}},
-               Amount: {{transaction.amount}},
-               Type: {{transaction.type}},
-               Color: {{transaction.color}}
-            </p>
-         </li>
-      </ul>
-   </li>
-</ul>
+<div class="" *ngFor="let date_transactions of transactions_by_date">
+   <div class="d-flex align-items-center justify-content-between content-date border-bottom">
+     <h3 class="ml-2 number">{{ date_transactions.date | date: 'dd' }}</h3>
+     <div class="lh-1 info">
+       <h3 class="subtitle1">{{ date_transactions.date | date: 'EEEE' }}</h3>
+       <p class="h6 mb-0 lh-1 subtitle2">{{ date_transactions.date | date: 'MMMM, yyyy' }}</p>
+     </div>
+     <h4 class="total">{{ getTotal(date_transactions.transactions) | currency}}</h4>
+   </div>
+   <div class="d-flex align-items-center justify-content-between content-info border-bottom" *ngFor="let transaction of date_transactions.transactions">
+     <div class="icon-cat" [style.background]="transaction.color">
+       <i class="bi" [class]="transaction.icon"></i>
+     </div>
+     <div class="lh-1 info-des">
+       <p class="h6 mb-0 lh-1 subtitle2">{{ transaction.category }}</p>
+       <h3 class="subtitle1">{{ transaction.type }}</h3>
+     </div>
+     <div [class]="model?.amount! >= 0 ? 'text-success' : 'text-danger'">
+       <h4 class="amount"><span *ngIf="model?.amount! >= 0">+</span>$ {{ transaction.amount }}</h4>
+     </div>
+   </div>
+</div>
