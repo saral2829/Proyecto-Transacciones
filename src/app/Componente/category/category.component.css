@@ -11,6 +11,8 @@
   --sky-blue: #20b6d2;
   --dark-sky-blue: #21a6e6;
   --blue: #4085f3;
+  --purple: #b52db5;
+  --gray: #4c5562;
 
   --red-color: #ec4649;
   --purple-color: rgb(181, 45, 181);
@@ -22,6 +24,21 @@
 }
 
 /* ******* */
+/* gray */
+.color-gray .card {
+  border-color: var(--gray);
+}
+.color-gray .icon-cat {
+  background-color: var(--gray);
+}
+
+/* purple */
+.color-purple .card {
+  border-color: var(--purple);
+}
+.color-purple .icon-cat {
+  background-color: var(--purple);
+}
 
 /* red */
 .color-red .card {

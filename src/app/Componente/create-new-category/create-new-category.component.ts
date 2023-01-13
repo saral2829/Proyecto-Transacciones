@@ -1,6 +1,9 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
-import { Category } from "../../models/category.model";
+
+import { Category } from '../../models/category';
+import { NewCategory } from 'src/app/models/new-category.model';
+
 
 @Component({
    selector: "app-create-new-category",
@@ -8,53 +11,57 @@ import { Category } from "../../models/category.model";
    styleUrls: ["./create-new-category.component.css"],
 })
 export class CreateNewCategoryComponent {
-   @Input() visible: boolean = false;
-   name: string = "";
-   type: string = "";
-   color: string = "";
-   icon: string = "";
-   // newCategory = {
-   //   name: '',
-   //   type: '',
-   // };
 
-   @Output() onClose = new EventEmitter<boolean>();
+  @Input() visible: boolean = false;
+  name: string = '';
+  type: string = '';
+  color: string = '';
+  icon: string = '';
 
-   @Output() onCreate = new EventEmitter<Category>();
+  newCategory!: NewCategory;
 
-   close() {
-      this.onClose.emit();
-   }
+  @Output() onClose = new EventEmitter<boolean>();
 
-   nameValue(): void {
-      this.name = this.name;
-      this.type = this.type;
-      this.color = this.color;
-   }
+  @Output() onCreate = new EventEmitter<NewCategory>();
 
-   selectColor(color: string): void {
-      this.color = color;
-   }
+  close() {
+    this.onClose.emit();
+  }
 
-   selectIcon(icon: string): void {
-      this.icon = icon;
-   }
+  nameValue(): void {
+    this.name = this.name;
+    this.type = this.type;
+    this.color = this.color;
+  }
 
-   create(): void {
-      this.onCreate.emit({
-         id: 2,
-         name: this.name,
-         icon: this.icon,
-         type: this.type,
-         color: this.color,
-         total: "0",
-      });
+  selectColor(color: string): void {
+    this.color = color;
+  }
 
-      this.close();
+  selectIcon(icon: string): void {
+    this.icon = icon;
+  }
 
-      console.log(this.name);
-      console.log(this.type);
-      console.log(this.color);
-      console.log(this.icon);
-   }
+  create(): void {
+    this.newCategory = {
+      name: this.name,
+      icon: this.icon,
+      type: this.type,
+      color: this.color,
+      total: '0',
+    };
+
+    this.onCreate.emit(this.newCategory);
+
+    this.close();
+
+    this.name = '';
+    this.type = '';
+    this.color = '';
+    this.icon = '';
+
+    console.log('---------------------------');
+    console.log(this.newCategory);
+  }
+
 }
