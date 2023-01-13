@@ -1,60 +1,60 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
-import { Category } from '../../models/category';
+import { Category } from "../../models/category.model";
 
 @Component({
-  selector: 'app-create-new-category',
-  templateUrl: './create-new-category.component.html',
-  styleUrls: ['./create-new-category.component.css'],
+   selector: "app-create-new-category",
+   templateUrl: "./create-new-category.component.html",
+   styleUrls: ["./create-new-category.component.css"],
 })
 export class CreateNewCategoryComponent {
-  @Input() visible: boolean = false;
-  name: string = '';
-  type: string = '';
-  color: string = '';
-  icon: string = '';
-  // newCategory = {
-  //   name: '',
-  //   type: '',
-  // };
+   @Input() visible: boolean = false;
+   name: string = "";
+   type: string = "";
+   color: string = "";
+   icon: string = "";
+   // newCategory = {
+   //   name: '',
+   //   type: '',
+   // };
 
-  @Output() onClose = new EventEmitter<boolean>();
+   @Output() onClose = new EventEmitter<boolean>();
 
-  @Output() onCreate = new EventEmitter<Category>();
+   @Output() onCreate = new EventEmitter<Category>();
 
-  close() {
-    this.onClose.emit();
-  }
+   close() {
+      this.onClose.emit();
+   }
 
-  nameValue(): void {
-    this.name = this.name;
-    this.type = this.type;
-    this.color = this.color;
-  }
+   nameValue(): void {
+      this.name = this.name;
+      this.type = this.type;
+      this.color = this.color;
+   }
 
-  selectColor(color: string): void {
-    this.color = color;
-  }
+   selectColor(color: string): void {
+      this.color = color;
+   }
 
-  selectIcon(icon: string): void {
-    this.icon = icon;
-  }
+   selectIcon(icon: string): void {
+      this.icon = icon;
+   }
 
-  create(): void {
-    this.onCreate.emit({
-      id: 2,
-      name: this.name,
-      icon: this.icon,
-      type: this.type,
-      color: this.color,
-      total: '0',
-    });
+   create(): void {
+      this.onCreate.emit({
+         id: 2,
+         name: this.name,
+         icon: this.icon,
+         type: this.type,
+         color: this.color,
+         total: "0",
+      });
 
-    this.close();
+      this.close();
 
-    console.log(this.name);
-    console.log(this.type);
-    console.log(this.color);
-    console.log(this.icon);
-  }
+      console.log(this.name);
+      console.log(this.type);
+      console.log(this.color);
+      console.log(this.icon);
+   }
 }
