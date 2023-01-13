@@ -13,6 +13,8 @@ import categories_json from "../../categories.json";
    styleUrls: ["./list-transactions.component.css"],
 })
 export class ListTransactionsComponent {
+   @Input() model: Transaction | null = null;
+
    @Input() filtered: Array<Transaction> = [];
 
    transactions_by_date: Array<TransactionsByDate> = [];

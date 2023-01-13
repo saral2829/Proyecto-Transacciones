@@ -3,49 +3,49 @@
     {
       "id": 1,
       "name": "Rent",
-      "icon": "rent",
+      "icon": "bi bi-bank2",
       "type": "expense",
-      "color": "gray",
+      "color": "#4c5562",
       "total": "500"
     },
     {
       "id": 2,
       "name": "Groceries",
-      "icon": "groceries",
+      "icon": "bi bi-cart-fill",
       "type": "expense",
-      "color": "blue",
+      "color": "#21a6e6",
       "total": "100"
     },
     {
       "id": 3,
       "name": "Transport",
-      "icon": "transport",
+      "icon": "bi bi-car-front-fill",
       "type": "expense",
-      "color": "orange",
+      "color": "#f17029",
       "total": "150"
     },
     {
       "id": 4,
       "name": "Health",
-      "icon": "health",
+      "icon": "bi bi-heart-pulse-fill",
       "type": "income",
-      "color": "red",
+      "color": "#ec4649",
       "total": "200"
     },
     {
       "id": 5,
       "name": "Gifts",
-      "icon": "gifts",
+      "icon": "bi bi-gift-fill",
       "type": "income",
-      "color": "purple",
+      "color": "#b52db5",
       "total": "50"
     },
     {
       "id": 6,
       "name": "Education",
-      "icon": "education",
+      "icon": "bi bi-mortarboard-fill",
       "type": "expense",
-      "color": "sky-blue",
+      "color": "#4085f3",
       "total": "250"
     }
   ]
