@@ -1,4 +1,4 @@
-<div class="container">
-   <app-filter (filtered)="getFilteredTransactions($event)"></app-filter>
-   <app-list-transactions [filtered]="filtered"></app-list-transactions>
+<div class="transactions">
+  <app-filter (filtered)="getFilteredTransactions($event)"></app-filter>
+  <app-list-transactions [filtered]="filtered"></app-list-transactions>
 </div>
