@@ -230,17 +230,21 @@
 .nav-item {
   margin: 20px 0 0 20px;
 }
+.nav-item .expense-a {
+  border-bottom: solid 2px #d92d78 !important;
+  color: #d92d78;
+}
 .nav-item a {
   text-decoration: none;
   color: var(--gris-color);
   font-size: 1.2rem;
-  padding: 0px 0px 0px 20px;
+  /* padding: 0 0 20px 0; */
   font-family: "Poppins", sans-serif;
 }
 .nav-item a:hover {
   /* background-color: red !important; */
   /* border-bottom: #4085f3; */
-  border-bottom: solid 5px #d92d78 !important;
+  border-bottom: solid 2px #d92d78 !important;
   color: #d92d78;
 }
 
