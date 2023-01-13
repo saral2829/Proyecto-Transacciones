@@ -1,7 +1,6 @@
 :host {
   --gray-color: #4c5562;
 }
-
 .filter {
   align-items: center;
   display: flex;
@@ -32,7 +31,6 @@
   z-index: 1;
   font-family: "Poppins", sans-serif;
 }
-
 .btn-filter {
   border: none;
 }
@@ -48,7 +46,6 @@ label {
   flex-wrap: wrap;
   gap: 7px;
 }
-
 .filter-body p {
   margin-bottom: 0;
 }
@@ -60,3 +57,4 @@ label {
   max-width: 40%;
   flex-direction: column;
 }
+  

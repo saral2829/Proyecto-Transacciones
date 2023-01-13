@@ -24,12 +24,12 @@
          <div class="amount-container d-flex">
             <div class="minimo d-flex">
                <label for="min_amount" class="text-uppercase">Min</label>
-               <input id="min_amount" name="min_amount" type="number" [(ngModel)]="filter_params.min_amount"
+               <input id="min_amount" class="form-control" name="min_amount" type="number" [(ngModel)]="filter_params.min_amount"
                   (change)="onChange()">
             </div>
             <div class=" maximo d-flex">
                <label for="max_amount" class="text-uppercase">Max</label>
-               <input id="max_amount" name="max_amount" type="number" [(ngModel)]="filter_params.max_amount"
+               <input id="max_amount" class="form-control" name="max_amount" type="number" [(ngModel)]="filter_params.max_amount"
                   (change)="onChange()">
             </div>
          </div>
@@ -37,11 +37,11 @@
          <div class="amount-container d-flex">
             <div class="minimo d-flex">
                <label for="from" class="text-uppercase">From</label>
-               <input id="from" name="from" type="date" [(ngModel)]="filter_params.from" (change)="onChange()" />
+               <input id="from" class="form-control" name="from" type="date" [(ngModel)]="filter_params.from" (change)="onChange()" />
             </div>
             <div class="maximo d-flex">
                <label for="'to" class="text-uppercase">To</label>
-               <input id="to" name="to" type="date" [(ngModel)]="filter_params.to" (change)="onChange()" />
+               <input id="to" class="form-control" name="to" type="date" [(ngModel)]="filter_params.to" (change)="onChange()" />
             </div>
          </div>
       </div>
