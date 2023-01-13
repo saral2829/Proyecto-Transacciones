@@ -1,7 +1,7 @@
 <div class="filter-content">
-   <div class="filter-header">
-      <h2 class="mb-3 filter-title">Transactions</h2>
-      <button type="button" class="btn-filter mb-3" data-bs-toggle="collapse" href="#collapseExample">
+   <div class="filter-header mt-3">
+      <h2 class="mb-2 filter-title">Transactions</h2>
+      <button type="button" class="btn-filter mb-3 rounded-circle fw-5" data-bs-toggle="collapse" href="#collapseExample">
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel"
             viewBox="0 0 16 16">
             <path
@@ -10,8 +10,8 @@
       </button>
    </div>
    <form>
-      <div class="filter-body collapse" id="collapseExample">
-         <p class="mb-2 subtitle">Category</p>
+      <div class="filter-body collapse mb-2" id="collapseExample">
+         <p class="mb-2  mt-2 subtitle">Category</p>
          <div class="d-flex checkbox-container">
             <div class="d-flex checkbox" *ngFor="let category of filter_categories">
                <input type="checkbox" class="form-check-input" id="category" name="category.value"
