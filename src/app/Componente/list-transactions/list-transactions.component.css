@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 /*Estilo contenido fecha*/
-.content-date{
+.content-date {
   padding: 6px 20px;
   background-color: #f5f5f5;
 }
-.info{
+.info {
   margin-right: 2rem;
 }
-.number{
+.number {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   padding-top: 5px;
@@ -36,7 +36,7 @@
 }
 
 /*Estilo contenido info categoria*/
-.content-info{
+.content-info {
   padding: 14px 20px;
 }
 .icon-cat {
@@ -46,7 +46,7 @@
 .icon-cat .bi {
   color: white;
 }
-.info-des{
+.info-des {
   margin-right: 5rem;
 }
 .amount {
