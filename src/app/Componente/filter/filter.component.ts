@@ -52,11 +52,15 @@ export class FilterComponent {
    }
 
    onChange() {
+      let categories: Array<number> = this.filter_categories
+         .filter((category) => category.value)
+         .map((category) => category.id);
+      if (categories.length === 0) {
+         categories = this.filter_categories.map((category) => category.id);
+      }
       this.filtered_transactions = this.filter_transactions(
          this.filter_params,
-         this.filter_categories
-            .filter((category) => category.value)
-            .map((category) => category.id)
+         categories
       );
       this.filtered.emit(this.filtered_transactions);
       //console.log(this.filtered_transactions);
