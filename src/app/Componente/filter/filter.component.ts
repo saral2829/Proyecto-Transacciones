@@ -26,7 +26,6 @@ export class FilterComponent {
          return {
             id: category.id,
             name: category.name,
-            type: category.type,
             value: false,
          };
       }
@@ -34,8 +33,8 @@ export class FilterComponent {
 
    filter_params: FilterParams = {
       transactions: this.transactions,
-      min_amount: 0,
-      max_amount: 1000000,
+      min_amount: "",
+      max_amount: "",
       from: this.transactions[0].date.split(" ")[0],
       to: this.transactions[this.transactions.length - 1].date.split(" ")[0],
    };
@@ -76,8 +75,14 @@ export class FilterComponent {
          date = date.split(" ")[0];
          let category = transaction.category_id;
          return (
-            amount >= filter_params.min_amount &&
-            amount <= filter_params.max_amount &&
+            amount >=
+               (filter_params.min_amount === ""
+                  ? 0
+                  : filter_params.min_amount) &&
+            amount <=
+               (filter_params.max_amount === ""
+                  ? 999999999
+                  : filter_params.max_amount) &&
             date >= filter_params.from &&
             date <= filter_params.to &&
             filter_categories.includes(category)

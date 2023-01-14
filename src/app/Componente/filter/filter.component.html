@@ -1,7 +1,8 @@
 <div class="filter-content">
    <div class="filter-header mt-3">
       <h2 class="mb-2 filter-title">Transactions</h2>
-      <button type="button" class="btn-filter mb-3 rounded-circle fw-5" data-bs-toggle="collapse" href="#collapseExample">
+      <button type="button" class="btn-filter mb-3 rounded-circle fw-5" data-bs-toggle="collapse"
+         href="#collapseExample">
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel"
             viewBox="0 0 16 16">
             <path
@@ -24,24 +25,26 @@
          <div class="amount-container d-flex">
             <div class="minimo d-flex">
                <label for="min_amount" class="text-uppercase">Min</label>
-               <input id="min_amount" class="form-control" name="min_amount" type="number" [(ngModel)]="filter_params.min_amount"
-                  (change)="onChange()">
+               <input id="min_amount" class="form-control" name="min_amount" type="number" ngInit="min_amount = 10"
+                  [(ngModel)]="filter_params.min_amount" (change)="onChange()">
             </div>
             <div class=" maximo d-flex">
                <label for="max_amount" class="text-uppercase">Max</label>
-               <input id="max_amount" class="form-control" name="max_amount" type="number" [(ngModel)]="filter_params.max_amount"
-                  (change)="onChange()">
+               <input id="max_amount" class="form-control" name="max_amount" type="number"
+                  [(ngModel)]="filter_params.max_amount" (change)="onChange()">
             </div>
          </div>
          <p class="mt-2 subtitle">Date</p>
          <div class="amount-container d-flex">
             <div class="minimo d-flex">
                <label for="from" class="text-uppercase">From</label>
-               <input id="from" class="form-control" name="from" type="date" [(ngModel)]="filter_params.from" (change)="onChange()" />
+               <input id="from" class="form-control" name="from" type="date" [(ngModel)]="filter_params.from"
+                  (change)="onChange()" />
             </div>
             <div class="maximo d-flex">
                <label for="'to" class="text-uppercase">To</label>
-               <input id="to" class="form-control" name="to" type="date" [(ngModel)]="filter_params.to" (change)="onChange()" />
+               <input id="to" class="form-control" name="to" type="date" [(ngModel)]="filter_params.to"
+                  (change)="onChange()" />
             </div>
          </div>
       </div>

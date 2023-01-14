@@ -1,277 +1,277 @@
 * {
-  margin: 0;
+   margin: 0;
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 :host {
-  --red: #ec4649;
-  --dark-orange: #f17029;
-  --orange: #eb9829;
-  --dark-green: #23b882;
-  --green: #25b7a6;
-  --sky-blue: #20b6d2;
-  --dark-sky-blue: #21a6e6;
-  --blue: #4085f3;
-  --purple: #b52db5;
-  --gray: #4c5562;
+   --red: #ec4649;
+   --dark-orange: #f17029;
+   --orange: #eb9829;
+   --dark-green: #23b882;
+   --green: #25b7a6;
+   --sky-blue: #20b6d2;
+   --dark-sky-blue: #21a6e6;
+   --blue: #4085f3;
+   --purple: #b52db5;
+   --gray: #4c5562;
 
-  --red-color: #ec4649;
-  --purple-color: rgb(181, 45, 181);
-  --gris-color: rgba(84, 81, 81, 0.752);
-  --orange-color: #f17029;
-  --sky-blue-color: #21a6e6;
-  --blue-color: #4085f3;
-  --gris-light-color: rgba(129, 126, 126, 0.338);
+   --red-color: #ec4649;
+   --purple-color: rgb(181, 45, 181);
+   --gris-color: rgba(84, 81, 81, 0.752);
+   --orange-color: #f17029;
+   --sky-blue-color: #21a6e6;
+   --blue-color: #4085f3;
+   --gris-light-color: rgba(129, 126, 126, 0.338);
 }
 
 /* ******* */
 /* gray */
 .color-gray .card {
-  border-color: var(--gray);
+   border-color: var(--gray);
 }
 .color-gray .icon-cat {
-  background-color: var(--gray);
+   background-color: var(--gray);
 }
 
 /* purple */
 .color-purple .card {
-  border-color: var(--purple);
+   border-color: var(--purple);
 }
 .color-purple .icon-cat {
-  background-color: var(--purple);
+   background-color: var(--purple);
 }
 
 /* red */
 .color-red .card {
-  border-color: var(--red);
+   border-color: var(--red);
 }
 .color-red .icon-cat {
-  background-color: var(--red);
+   background-color: var(--red);
 }
 
 /* dark-orange */
 .color-dark-orange .card {
-  border-color: var(--dark-orange);
+   border-color: var(--dark-orange);
 }
 .color-dark-orange .icon-cat {
-  background-color: var(--dark-orange);
+   background-color: var(--dark-orange);
 }
 
 /* orange */
 .color-orange .card {
-  border-color: var(--orange);
+   border-color: var(--orange);
 }
 .color-orange .icon-cat {
-  background-color: var(--orange);
+   background-color: var(--orange);
 }
 
 /* dark-green */
 .color-dark-green .card {
-  border-color: var(--dark-green);
+   border-color: var(--dark-green);
 }
 .color-dark-green .icon-cat {
-  background-color: var(--dark-green);
+   background-color: var(--dark-green);
 }
 
 /* green */
 .color-green .card {
-  border-color: var(--green);
+   border-color: var(--green);
 }
 .color-green .icon-cat {
-  background-color: var(--green);
+   background-color: var(--green);
 }
 
 /* sky-blue */
 .color-sky-blue .card {
-  border-color: var(--sky-blue);
+   border-color: var(--sky-blue);
 }
 .color-sky-blue .icon-cat {
-  background-color: var(--sky-blue);
+   background-color: var(--sky-blue);
 }
 
 /* dark-sky-blue */
 .color-dark-sky-blue .card {
-  border-color: var(--dark-sky-blue);
+   border-color: var(--dark-sky-blue);
 }
 .color-dark-sky-blue .icon-cat {
-  background-color: var(--dark-sky-blue);
+   background-color: var(--dark-sky-blue);
 }
 
 /* blue */
 .color-blue .card {
-  border-color: var(--blue);
+   border-color: var(--blue);
 }
 .color-blue .icon-cat {
-  background-color: var(--blue);
+   background-color: var(--blue);
 }
 
 /* ******* */
 
 /*BACKGROUND ICONOS*/
 .circle-red {
-  background-color: #ec4649;
+   background-color: #ec4649;
 }
 
 .circle-dark-orange {
-  background-color: #f17029;
+   background-color: #f17029;
 }
 
 .circle-sky-blue {
-  background-color: #20b6d2;
+   background-color: #20b6d2;
 }
 .circle-sky-blue::before {
-  border-color: #20b6d2 !important;
+   border-color: #20b6d2 !important;
 }
 
 .circle-dark-sky-blue {
-  background-color: #21a6e6;
+   background-color: #21a6e6;
 }
 .circle-dark-sky-blue::before {
-  border-color: #21a6e6 !important;
+   border-color: #21a6e6 !important;
 }
 
 .circle-blue {
-  background-color: #4085f3;
+   background-color: #4085f3;
 }
 .circle-blue::before {
-  border-color: #4085f3 !important;
+   border-color: #4085f3 !important;
 }
 .circle-gris {
-  background-color: rgba(84, 81, 81, 0.752);
+   background-color: rgba(84, 81, 81, 0.752);
 }
 .circle-purple {
-  background-color: rgb(181, 45, 181);
+   background-color: rgb(181, 45, 181);
 }
 
 /*COLOR BORDER CARDS*/
 
 .border-red {
-  border-color: var(--red-color) !important;
+   border-color: var(--red-color) !important;
 }
 .border-gris {
-  border-color: var(--gris-color) !important;
+   border-color: var(--gris-color) !important;
 }
 
 .border-purple {
-  border-color: var(--purple-color) !important;
+   border-color: var(--purple-color) !important;
 }
 
 .border-orange {
-  border-color: var(--orange-color) !important;
+   border-color: var(--orange-color) !important;
 }
 
 .border-sky-blue {
-  border-color: var(--sky-blue-color) !important;
+   border-color: var(--sky-blue-color) !important;
 }
 
 .border-blue {
-  border-color: var(--blue-color) !important;
+   border-color: var(--blue-color) !important;
 }
 
 .border-plus {
-  border-style: dashed !important;
-  border-color: var(--gris-color) !important;
+   border-style: dashed !important;
+   border-color: var(--gris-color) !important;
 }
 /*Estilo iconos*/
 
 .icon-cat {
-  border-radius: 35px;
-  padding: 15px;
+   border-radius: 35px;
+   padding: 15px;
 }
 
 .icon-cat svg {
-  color: white !important;
-  height: 30px;
-  width: 30px;
+   color: white !important;
+   height: 30px;
+   width: 30px;
 }
 
 .icon-cat img {
-  filter: invert(1);
-  height: 30px;
-  width: 30px;
+   filter: invert(1);
+   height: 30px;
+   width: 30px;
 }
 
 .icon-cat-plus svg {
-  color: var(--gris-color);
+   color: var(--gris-color);
 }
 
 /*Estilos de texto*/
 .text-title-category {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: black;
-  font-family: "Poppins", sans-serif;
+   font-size: 1.8rem;
+   font-weight: 800;
+   color: black;
+   font-family: "Poppins", sans-serif;
 }
 
 .text-category {
-  font-size: 1rem;
-  color: var(--gris-color);
-  font-family: "Poppins", sans-serif;
+   font-size: 1rem;
+   color: var(--gris-color);
+   font-family: "Poppins", sans-serif;
 }
 .text-tot {
-  font-size: 0.8rem;
-  color: var(--gris-color);
-  font-family: "Poppins", sans-serif;
+   font-size: 0.8rem;
+   color: var(--gris-color);
+   font-family: "Poppins", sans-serif;
 }
 .mont-category span {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: rgba(43, 40, 40, 0.858);
-  font-family: "Poppins", sans-serif;
+   font-size: 1.8rem;
+   font-weight: 600;
+   color: rgba(43, 40, 40, 0.858);
+   font-family: "Poppins", sans-serif;
 }
 
 .mont-expenses {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--red-color);
-  font-family: "Poppins", sans-serif;
+   font-size: 1.8rem;
+   font-weight: 600;
+   //color: var(--red-color);
+   font-family: "Poppins", sans-serif;
 }
 
 /*Estilos de nav*/
 .nav-item {
-  margin: 20px 0 0 20px;
+   margin: 20px 0 0 20px;
 }
 .nav-item a {
-  text-decoration: none;
-  color: var(--gris-color);
-  font-size: 1.2rem;
-  padding: 0px 0px 0px 20px;
-  font-family: "Poppins", sans-serif;
+   text-decoration: none;
+   color: var(--gris-color);
+   font-size: 1.2rem;
+   padding: 0px 0px 0px 20px;
+   font-family: "Poppins", sans-serif;
 }
 .nav-item a:hover {
-  /* background-color: red !important; */
-  /* border-bottom: #4085f3; */
-  border-bottom: solid 5px #d92d78 !important;
-  color: #d92d78;
+   /* background-color: red !important; */
+   /* border-bottom: #4085f3; */
+   border-bottom: solid 5px #d92d78 !important;
+   color: #d92d78;
 }
 
 /*Estilos de botones return y next*/
 .return--button,
 .next--button {
-  border: var(--gris-color);
-  border-radius: 23px;
-  padding: 8px 10px 8px 10px;
+   border: var(--gris-color);
+   border-radius: 23px;
+   padding: 8px 10px 8px 10px;
 }
 
 .return--button:hover,
 .next--button:hover {
-  box-shadow: rgba(101, 98, 98, 0.35) 5px 2px 5px 2px;
+   box-shadow: rgba(101, 98, 98, 0.35) 5px 2px 5px 2px;
 }
 
 /*Estilo de mes*/
 .month-category {
-  background-color: #f0f0f0;
-  border-radius: 15px;
+   background-color: #f0f0f0;
+   border-radius: 15px;
 }
 .month-category p {
-  font-family: "Poppins", sans-serif;
-  color: black;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0px 10px 0px 10px;
+   font-family: "Poppins", sans-serif;
+   color: black;
+   font-size: 1rem;
+   font-weight: 500;
+   padding: 0px 10px 0px 10px;
 }
 
 /* Botón para el modal */
 .button-add {
-  cursor: pointer;
-  padding: 10px;
+   cursor: pointer;
+   padding: 10px;
 }
