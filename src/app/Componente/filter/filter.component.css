@@ -9,7 +9,7 @@
    left: 0;
    position: fixed;
    top: 0;
-   width: 100%;
+   /* width: 100%; */
 }
 .filter-header {
    align-items: start;
@@ -33,6 +33,7 @@
 }
 .btn-filter {
    border: none;
+   margin-left: 257px;
 }
 label {
    font-size: 0.9rem;
