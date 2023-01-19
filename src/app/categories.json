@@ -1,52 +1,53 @@
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "Rent",
-      "icon": "bi bi-bank2",
-      "type": "expense",
-      "color": "#4c5562",
-      "total": "500"
-    },
-    {
-      "id": 2,
-      "name": "Groceries",
-      "icon": "bi bi-cart-fill",
-      "type": "expense",
-      "color": "#21a6e6",
-      "total": "100"
-    },
-    {
-      "id": 3,
-      "name": "Transport",
-      "icon": "bi bi-car-front-fill",
-      "type": "expense",
-      "color": "#f17029",
-      "total": "150"
-    },
-    {
-      "id": 4,
-      "name": "Health",
-      "icon": "bi bi-heart-pulse-fill",
-      "type": "income",
-      "color": "#ec4649",
-      "total": "200"
-    },
-    {
-      "id": 5,
-      "name": "Gifts",
-      "icon": "bi bi-gift-fill",
-      "type": "income",
-      "color": "#b52db5",
-      "total": "50"
-    },
-    {
-      "id": 6,
-      "name": "Education",
-      "icon": "bi bi-mortarboard-fill",
-      "type": "expense",
-      "color": "#4085f3",
-      "total": "250"
-    }
-  ]
+   "categories": [
+      {
+         "id": 1,
+         "name": "rent",
+         "icon": "rent",
+         "type": "expense",
+         "color": "gray"
+      },
+      {
+         "id": 2,
+         "name": "salary",
+         "icon": "salary",
+         "type": "income",
+         "color": "green"
+      },
+      {
+         "id": 3,
+         "name": "transport",
+         "icon": "transport",
+         "type": "expense",
+         "color": "dark-orange"
+      },
+      {
+         "id": 4,
+         "name": "education",
+         "icon": "education",
+         "type": "expense",
+         "color": "blue"
+      },
+      {
+         "id": 5,
+         "name": "groceries",
+         "icon": "groceries",
+         "type": "expense",
+         "color": "dark-sky-blue"
+      },
+      {
+         "id": 6,
+         "name": "gifts",
+         "icon": "gifts",
+         "type": "expense",
+         "color": "purple"
+      },
+      {
+         "id": 7,
+         "name": "health",
+         "icon": "health",
+         "type": "expense",
+         "color": "red"
+      }
+   ]
 }

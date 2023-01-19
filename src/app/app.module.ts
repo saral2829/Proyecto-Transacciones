@@ -9,6 +9,9 @@ import { TransactionsComponent } from './Componente/transactions/transactions.co
 import { ListTransactionsComponent } from './Componente/list-transactions/list-transactions.component';
 import { CategoryComponent } from './Componente/category/category.component';
 import { SidebardComponent } from './Componente/sidebard/sidebard.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LogoutComponent } from './pages/logout/logout.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +22,10 @@ import { SidebardComponent } from './Componente/sidebard/sidebard.component';
     ListTransactionsComponent,
     CategoryComponent,
     SidebardComponent,
+    LoginComponent,
+    LogoutComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
