@@ -9,9 +9,12 @@ import { TransactionsComponent } from './Componente/transactions/transactions.co
 import { ListTransactionsComponent } from './Componente/list-transactions/list-transactions.component';
 import { CategoryComponent } from './Componente/category/category.component';
 import { SidebardComponent } from './Componente/sidebard/sidebard.component';
-import { IncomeComponent } from './Componente/income/income.component';
-// import { AppRoutingModule } from './app-routing.module';
 
+import { IncomeComponent } from './Componente/income/income.component';
+
+import { LoginComponent } from './pages/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +25,11 @@ import { IncomeComponent } from './Componente/income/income.component';
     CategoryComponent,
     SidebardComponent,
     IncomeComponent,
+    LoginComponent,
+    SignUpComponent
     
   ],
-  imports: [BrowserModule, FormsModule ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule ],
   providers: [],
   bootstrap: [AppComponent],
 })
