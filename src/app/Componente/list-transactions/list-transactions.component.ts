@@ -14,7 +14,6 @@ import categories_json from "../../categories.json";
 })
 export class ListTransactionsComponent {
    @Input() model: Transaction | null = null;
-
    @Input() filtered: Array<Transaction> = [];
 
    transactions_by_date: Array<TransactionsByDate> = [];
@@ -28,7 +27,14 @@ export class ListTransactionsComponent {
 
    // Group transactions by date
    groupByDate(filtered: Array<Transaction>): Array<TransactionsByDate> {
-      // Group transactions by date
+      // Invert order of transactions by date
+      filtered.sort((a, b) => {
+         let dateA = new Date(a.date);
+         let dateB = new Date(b.date);
+         return dateB.getTime() - dateA.getTime();
+      });
+
+      // Group transactions by date in inverted order
       const groups = filtered.reduce(
          (groups: any, transaction: Transaction) => {
             const date = transaction.date.split(" ")[0];

@@ -9,6 +9,8 @@ import { TransactionsComponent } from './Componente/transactions/transactions.co
 import { ListTransactionsComponent } from './Componente/list-transactions/list-transactions.component';
 import { CategoryComponent } from './Componente/category/category.component';
 import { SidebardComponent } from './Componente/sidebard/sidebard.component';
+import { IncomeComponent } from './Componente/income/income.component';
+// import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,10 @@ import { SidebardComponent } from './Componente/sidebard/sidebard.component';
     ListTransactionsComponent,
     CategoryComponent,
     SidebardComponent,
+    IncomeComponent,
+    
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule ],
   providers: [],
   bootstrap: [AppComponent],
 })

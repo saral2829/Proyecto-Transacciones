@@ -23,33 +23,18 @@
                 d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
               />
             </svg>
-            Expense</a
-          >
+            Expenses
+          </a>
         </li>
         <li class="nav-item">
-          <a
-            class=""
-            data-bs-toggle="updown"
-            href="#"
-            role="button"
-            aria-expanded="false"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-plus-circle"
-              viewBox="0 0 16 16"
-            >
+          <a class="" aria-current="page" href="#" role="button" (click)="onTypeChange('income')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle"
+              viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
               <path
-                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-              />
-              <path
-                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-              />
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
             </svg>
-            Incoment</a
-          >
+            Incomes</a>
         </li>
       </ul>
     </nav>
@@ -58,72 +43,54 @@
   <section class="container m-4">
     <div class="d-flex justify-content-center align-item-center gap-4">
       <div class=" ">
-        <button class="return--button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            fill="currentColor"
-            class="bi bi-chevron-left"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-            />
+        <button class="return--button" (click)="previousMonth()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
           </svg>
         </button>
       </div>
 
       <div class="month-category p-2">
-        <p class="text-center">March 2022</p>
+        <p class="text-center">{{ monthName }} {{ year }}</p>
       </div>
 
       <div>
-        <button class="next--button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            fill="currentColor"
-            class="bi bi-chevron-right"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-            />
+        <button class="next--button" (click)="nextMonth()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
           </svg>
         </button>
       </div>
     </div>
 
     <div class="p-4">
-      <p class="text-center mont-expenses">$1,250</p>
-      <p class="text-center text-tot"><span>Total expenses</span></p>
+      <div class="text-center mont-expenses">
+        <p [class]="type === 'expense' ? 'text-danger':'text-success'">
+          ${{totalMonth | number: '1.2-2'}}
+        </p>
+      </div>
+      <p class=" text-center text-tot"><span>Total {{type}}s</span></p>
     </div>
   </section>
 
   <section class="container">
     <div class="row">
-      <div
-        *ngFor="let category of categories"
-        class="col-xl-4 col-md-6 mb-4"
-        [ngClass]="'color-' + category.color"
-      >
+      <div *ngFor="let sumCategory of sumsByCategory" class="col-xl-4 col-md-6 mb-4"
+        [ngClass]="'color-' + sumCategory.color">
         <div class="card border-center-info shadow h-100 py-2">
           <div class="card-body">
             <div class="d-flex justify-content-left align-items-center">
               <div class="px-3 icon-cat">
-                <img
-                  src="../../../assets/icons/{{ category.icon }}.svg"
-                  alt="rent"
-                />
+                <img src="../../../assets/icons/{{ sumCategory.icon }}.svg" alt="icon" />
               </div>
               <div class="px-3">
-                <h3 class="text-category">{{ category.name }}</h3>
+                <h3 class="text-category">{{ sumCategory.name | titlecase }}</h3>
                 <p class="mont-category">
-                  <span>${{ category.total }}</span>
+                  <span>${{ sumCategory.total }}</span>
                 </p>
               </div>
             </div>
@@ -132,26 +99,15 @@
       </div>
 
       <div class="col-xl-4 col-md-6 mb-4">
-        <div
-          class="card border-center-info shadow h-100 py-2 w-100 border-plus"
-          (click)="addCategory()"
-        >
+        <div class="card border-center-info shadow h-100 py-2 w-100 border-plus" (click)="addCategory()">
           <div class="card-body">
             <div class="d-flex justify-content-center align-items-center">
               <div class="px-3 icon-cat-plus">
                 <div class="button-add">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    fill="currentColor"
-                    class="bi bi-plus-lg"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                    />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
                   </svg>
                 </div>
               </div>
@@ -163,8 +119,5 @@
   </section>
 </div>
 
-<app-create-new-category
-  [visible]="visibleNewCategoryPopup"
-  (onClose)="closePopup()"
-  (onCreate)="createCategory($event)"
-></app-create-new-category>
+<app-create-new-category [visible]="visibleNewCategoryPopup" (onClose)="closePopup()"
+  (onCreate)="createCategory($event)"></app-create-new-category>
