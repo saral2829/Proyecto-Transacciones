@@ -16,7 +16,8 @@ import { BudgetsComponent } from './Componente/budgets/budgets.component';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { DashboardComponent } from './Componente/dashboard/dashboard.component';
 import { TransactionsContentComponent } from './Componente/transactions-content/transactions-content.component';
-
+import { SignUpComponent } from './pages/sign-up/sign-up.component'; 
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,8 @@ import { TransactionsContentComponent } from './Componente/transactions-content/
     BudgetsComponent,
     DashboardComponent,
     TransactionsContentComponent,
+    SignUpComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { TransactionsContentComponent } from './Componente/transactions-content/
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatButtonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },
