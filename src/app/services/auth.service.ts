@@ -1,6 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { NewUser } from "../models/new-user.model";
+import { Profile } from "../models/profile.model";
 
 interface CurrentUser {
    email: string;
@@ -43,5 +45,27 @@ export class AuthService {
       }
 
       return false;
+   }
+
+   signup(newUser: NewUser): void {
+      this.http.post<Profile>(`${this.apiUri}/signup`, newUser).subscribe(
+         (data: Profile) => {
+            if (data.token) {
+               // entramos aqui solo si
+               // el usuario se logeo
+               // correctamente.
+               alert("Te has registrado correctamente.");
+               sessionStorage.setItem("token", data.token);
+               this.router.navigate(["/dashboard/categories"]);
+            }
+         },
+         (err) => {
+            alert("Este usuario ya existe.");
+         }
+      );
+   }
+
+   getProfile() {
+      return this.http.get(`${this.apiUri}/profile`);
    }
 }
