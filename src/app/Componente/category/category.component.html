@@ -10,7 +10,6 @@
           <a
             class=""
             aria-current="page"
-            href="#"
             role="button"
             (click)="onTypeChange('expense')"
           >
@@ -36,7 +35,6 @@
           <a
             class=""
             aria-current="page"
-            href="#"
             role="button"
             (click)="onTypeChange('income')"
           >
@@ -62,6 +60,7 @@
     </nav>
   </div>
 
+  <!-- select mes -->
   <section class="container m-4">
     <div class="d-flex justify-content-center align-item-center gap-4">
       <div class=" ">
@@ -109,6 +108,7 @@
       <div class="text-center mont-expenses">
         <p [class]="type === 'expense' ? 'text-danger' : 'text-success'">
           ${{ totalMonth | number : "1.2-2" }}
+          <!-- ${{ totalDelMes() }} -->
         </p>
       </div>
       <p class="text-center text-tot">
@@ -117,7 +117,7 @@
     </div>
   </section>
 
-  <section class="container">
+  <!-- <section class="container">
     <div class="row">
       <div
         *ngFor="let sumCategory of sumsByCategory"
@@ -169,6 +169,37 @@
                     />
                   </svg>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="container">
+    <div class="row">
+      <div
+        *ngFor="let category of filtrarCategoriasPorMes()"
+        class="col-xl-4 col-md-6 mb-4"
+        [ngClass]="'color-' + category.color"
+      >
+        <div class="card border-center-info shadow h-100 py-2">
+          <div class="card-body">
+            <div class="d-flex justify-content-left align-items-center">
+              <div class="px-3 icon-cat">
+                <img
+                  src="../../../assets/icons/{{ category.icon }}.svg"
+                  alt="icon"
+                />
+              </div>
+              <div class="px-3">
+                <h3 class="text-category">
+                  {{ category.name | titlecase }}
+                </h3>
+                <p class="mont-category">
+                  <span>${{ sumaTotalCategoria(category.transactions) }}</span>
+                </p>
               </div>
             </div>
           </div>

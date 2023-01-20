@@ -13,6 +13,10 @@
   --blue: #4085f3;
   --purple: #b52db5;
   --gray: #4c5562;
+  --teal: #007c7f;
+  --yellow: yellow;
+  --cyan: cyan;
+  --light-blue: #4085f3;
 
   --red-color: #ec4649;
   --purple-color: rgb(181, 45, 181);
@@ -24,6 +28,38 @@
 }
 
 /* ******* */
+/* teal */
+.color-teal .card {
+  border-color: var(--teal);
+}
+.color-teal .icon-cat {
+  background-color: var(--teal);
+}
+
+/* yellow */
+.color-yellow .card {
+  border-color: var(--yellow);
+}
+.color-yellow .icon-cat {
+  background-color: var(--yellow);
+}
+
+/* cyan */
+.color-cyan .card {
+  border-color: var(--cyan);
+}
+.color-cyan .icon-cat {
+  background-color: var(--cyan);
+}
+
+/* light-blue */
+.color-light-blue .card {
+  border-color: var(--light-blue);
+}
+.color-light-blue .icon-cat {
+  background-color: var(--light-blue);
+}
+
 /* gray */
 .color-gray .card {
   border-color: var(--gray);
@@ -220,10 +256,10 @@
 }
 
 .mont-expenses {
-   font-size: 1.8rem;
-   font-weight: 600;
-   color: var(--red-color);
-   font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--red-color);
+  font-family: "Poppins", sans-serif;
 }
 
 /*Estilos de nav*/
@@ -247,7 +283,7 @@
   border-bottom: solid 5px #d92d78 !important;
   color: #d92d78;
 }
-.nav-item .expense-a{
+.nav-item .expense-a {
   border-bottom: solid 5px #d92d78 !important;
   color: #d92d78;
 }
