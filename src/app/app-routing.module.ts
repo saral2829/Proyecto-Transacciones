@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { BudgetsComponent } from './Componente/budgets/budgets.component';
 import { CategoryComponent } from './Componente/category/category.component';
 import { DashboardComponent } from './Componente/dashboard/dashboard.component';
+import { NotFoundComponent } from './Componente/not-found/not-found.component';
 import { TransactionsContentComponent } from './Componente/transactions-content/transactions-content.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
   },
   {
     path: 'dashboard',
@@ -36,10 +42,10 @@ const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'budgets',
-  //   component: BudgetsComponent,
-  // },
+  {
+    path: '**',
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({

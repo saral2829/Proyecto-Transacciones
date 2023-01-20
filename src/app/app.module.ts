@@ -16,6 +16,14 @@ import { BudgetsComponent } from './Componente/budgets/budgets.component';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { DashboardComponent } from './Componente/dashboard/dashboard.component';
 import { TransactionsContentComponent } from './Componente/transactions-content/transactions-content.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component'; 
+import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import { NotFoundComponent } from './Componente/not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +38,10 @@ import { TransactionsContentComponent } from './Componente/transactions-content/
     BudgetsComponent,
     DashboardComponent,
     TransactionsContentComponent,
+    SignUpComponent,
+    NotFoundComponent
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -37,6 +49,11 @@ import { TransactionsContentComponent } from './Componente/transactions-content/
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatIconModule
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },

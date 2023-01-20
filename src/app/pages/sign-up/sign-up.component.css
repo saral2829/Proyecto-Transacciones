@@ -1,0 +1,40 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+
+.content-form {
+    padding:30px;
+     /* width: 50%;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  label, h2{
+   font-family: "Poppins", sans-serif;
+  }
+  h2{
+    font-weight: 600;
+    font-size: 2.2rem;
+  }
+
+  button{
+    
+   font-family: "Poppins", sans-serif;
+  }
+  .btn-color{
+    background-color: #f490b1;
+    color:white;
+  }
+
+  .btn-login-color{
+    background-color: transparent;
+    color:  #f490b1;
+  }
+.password-style input{
+  border-color:transparent;
+}
+  @media  screen and(max-width:768px) {
+    .content-form{
+        padding:20px;
+    } 
+  }
