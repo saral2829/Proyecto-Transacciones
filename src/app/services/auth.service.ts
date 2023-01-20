@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { NewUser } from '../models/new-user.model';
 
 interface CurrentUser {
   email: string;
@@ -20,7 +21,6 @@ export class AuthService {
   login(email: string, password: string) {
     this.http
       .post(`${this.apiUri}/login`, { email, password })
-
       .subscribe((data: any) => {
         if (data.token) {
           // entramos aqui solo si
@@ -43,5 +43,18 @@ export class AuthService {
     }
 
     return false;
+  }
+
+  signup(newUser: NewUser): void {
+    this.http.post(`${this.apiUri}/signup`, newUser).subscribe((data: any) => {
+      if (data.token) {
+        // entramos aqui solo si
+        // el usuario se logeo
+        // correctamente.
+        alert('Te has registrado correctamente.');
+        sessionStorage.setItem('token', data.token);
+        this.router.navigate(['/dashboard/categories']);
+      }
+    });
   }
 }
