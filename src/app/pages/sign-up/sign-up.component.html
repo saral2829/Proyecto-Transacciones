@@ -6,27 +6,27 @@
         <form action="" class="m-5">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email </label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="email" class="form-control" id="exampleFormControlInput1" required>
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">First Name</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Last Name</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Phone</label>
-                <input type="text" class="form-control" maxlength="9">
+                <input type="text" class="form-control" required maxlength="9">
             </div>
             <div class="d-grid gap-2">
-                <button class="btn btn-color" type="submit">SIGN UP</button>
-                <button class="btn btn-login-color" type="submit" routerLink="/login">Login </button>
+                <button  mat-raised-button color="pink" type="submit">SIGN UP</button>
+                <button mat-raised-button type="submit" routerLink="/login">Login </button>
               </div>
         </form>
        
