@@ -10,8 +10,6 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   getAllCategories() {
-    this.http.get(`${this.apiUri}/categories`).subscribe((data: any) => {
-      console.log(data);
-    });
+    return this.http.get(`${this.apiUri}/categories`);
   }
 }

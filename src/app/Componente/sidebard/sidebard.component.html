@@ -32,9 +32,14 @@
       </a>
     </li>
   </ul>
-  <div class="perfil" *ngIf="profile">
-    <strong>{{ profile.first_name }} {{ profile.last_name }}</strong>
-    <p>{{ profile.email }}</p>
+  <div class="perfil">
+    <div *ngIf="profile">
+      <strong>{{ profile.first_name }} {{ profile.last_name }}</strong>
+      <p>{{ profile.email }}</p>
+    </div>
+
+    <p *ngIf="!profile">Su sesion ha expirado!</p>
+
     <button class="btn-logout" (click)="logout()">Log out</button>
   </div>
 </div>

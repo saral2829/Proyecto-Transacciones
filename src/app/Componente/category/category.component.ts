@@ -1,31 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { Category, TotalCategory } from '../../models/category.model';
+import {
+  ApiCategory,
+  ApiCategoryTransaction,
+  Category,
+  TotalCategory,
+} from '../../models/category.model';
 import { Transaction } from '../../models/transaction.model';
 import { NewCategory } from '../../models/new-category.model';
 import data_json from '../../transactions.json';
 import categories_json from '../../categories.json';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
 })
-export class CategoryComponent {
-  month: string =
-    new Date().getMonth() + 1 < 10
-      ? '0' + (new Date().getMonth() + 1)
-      : (new Date().getMonth() + 1).toString();
+export class CategoryComponent implements OnInit {
+  // month: string =
+  //   new Date().getMonth() + 1 < 10
+  //     ? '0' + (new Date().getMonth() + 1)
+  //     : (new Date().getMonth() + 1).toString();
+  month: string = '08';
 
   previous: string = this.month;
   monthName: string = this.getMonthName(this.month);
-  year: string = new Date().getFullYear().toString();
+
+  // year: string = new Date().getFullYear().toString();
+  year: string = '2021';
+
   type: string = 'expense';
   transactions: Array<Transaction> = data_json.transactions;
   sumsByCategory: Array<TotalCategory> = [];
   totalMonth: number = 0;
   visibleNewCategoryPopup: boolean = false;
 
-  constructor() {
+  apiCategories!: ApiCategory[];
+
+  constructor(private categoryService: CategoryService) {
     this.sumsByCategory = this.getSumsByCategory(
       this.month,
       this.year,
@@ -34,6 +46,69 @@ export class CategoryComponent {
     this.totalMonth = this.getTotalMonth(this.sumsByCategory);
     //console.log(this.sumsByCategory);
     //console.log(this.totalMonth);
+  }
+
+  ngOnInit() {
+    this.categoryService.getAllCategories().subscribe((data: any) => {
+      this.apiCategories = data;
+    });
+  }
+
+  filtrarCategoriasPorMes() {
+    return this.apiCategories.filter((category) => {
+      let filtrar = false;
+
+      for (let i = 0; i < category.transactions.length; i++) {
+        const transaction = category.transactions[i];
+        const d = new Date(transaction.date);
+        const y = d.getFullYear().toString();
+        const m: string =
+          d.getMonth() + 1 < 10
+            ? '0' + (d.getMonth() + 1)
+            : (d.getMonth() + 1).toString();
+
+        // si la transaccion tiene como fecha, el año y el mes
+        // seleccionado:
+        if (this.year === y && this.month === m) {
+          filtrar = true;
+        }
+      }
+      return filtrar;
+    });
+  }
+
+  totalDelMes() {
+    // const filtradosPorMes = this.apiCategories.filter((category) => {
+    //   let filtrar = false;
+    //   for (let i = 0; i < category.transactions.length; i++) {
+    //     const transaction = category.transactions[i];
+    //     const d = new Date(transaction.date);
+    //     const y = d.getFullYear().toString();
+    //     const m: string =
+    //       d.getMonth() + 1 < 10
+    //         ? '0' + (d.getMonth() + 1)
+    //         : (d.getMonth() + 1).toString();
+    //     // si la transaccion tiene como fecha, el año y el mes
+    //     // seleccionado:
+    //     if (this.year === y && this.month === m) {
+    //       filtradosPorMes.push(transaction);
+    //     }
+    //   }
+    //   return filtrar;
+    // });
+    // console.log(filtradosPorMes);
+  }
+
+  // debe retornar el total de todas las transacciones
+  // realizadas en la fecha seleccionada.
+  sumaTotalCategoria(transactions: ApiCategoryTransaction[]) {
+    let total = 0;
+
+    for (var i = 0; i < transactions.length; i++) {
+      total = total + transactions[i].amount;
+    }
+
+    return total;
   }
 
   getMonthName(month: string): string {
