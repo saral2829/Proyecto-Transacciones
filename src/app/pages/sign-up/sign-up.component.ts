@@ -20,7 +20,11 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {}
 
+
+  hide = true;
+
   onSubmit(): void {
     this.authService.signup(this.signupForm.value);
   }
+
 }

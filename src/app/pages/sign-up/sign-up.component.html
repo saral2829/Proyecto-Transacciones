@@ -1,82 +1,47 @@
 <div class="container mh-100 mw-100">
-  <div class="mt-5">
-    <h2 class="text-center">Sign Up</h2>
-  </div>
-  <div class="content-form">
-    <form [formGroup]="signupForm" class="m-5">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email </label>
-        <input
-          type="email"
-          name="email"
-          formControlName="email"
-          class="form-control"
-          id="exampleFormControlInput1"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">
-          Password
-        </label>
-        <input
-          type="password"
-          name="password"
-          formControlName="password"
-          class="form-control"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"
-          >First Name</label
-        >
-        <input
-          type="text"
-          name="first_name"
-          formControlName="first_name"
-          class="form-control"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"
-          >Last Name</label
-        >
-        <input
-          type="text"
-          name="last_name"
-          formControlName="last_name"
-          class="form-control"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"
-          >Phone</label
-        >
-        <input
-          type="text"
-          name="phone"
-          formControlName="phone"
-          class="form-control"
-          required
-          maxlength="9"
-        />
-      </div>
-      <div class="d-grid gap-2">
-        <button
-          mat-raised-button
-          color="pink"
-          type="submit"
-          (click)="onSubmit()"
-        >
-          SIGN UP
-        </button>
-        <button mat-raised-button type="submit" routerLink="/login">
-          Login
-        </button>
-      </div>
-    </form>
-  </div>
+
+    <div class="mt-5">
+        <h2 class="text-center">Sign Up</h2>
+    </div>
+    <div class="content-form">
+        <form action="" class="m-5">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email </label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" required>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                <div class="form-control password-style">
+                    <input matInput [type]="hide ? 'password' : 'text'" >
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </div>
+               
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">First Name</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Last Name</label>
+                <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Phone</label>
+                <input type="text" class="form-control" required maxlength="9">
+            </div>
+            <div class="d-grid gap-2">
+                <button mat-raised-button 
+                color="accent"
+                  type="submit">SIGN UP</button>
+                <button
+                mat-raised-button
+                type="submit" 
+                routerLink="/login">Login </button>
+              </div>
+        </form>
+       
+    </div>
 </div>
+

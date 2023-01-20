@@ -1,6 +1,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+
 .content-form {
     padding:30px;
      /* width: 50%;  */
@@ -29,7 +30,9 @@
     background-color: transparent;
     color:  #f490b1;
   }
-
+.password-style input{
+  border-color:transparent;
+}
   @media  screen and(max-width:768px) {
     .content-form{
         padding:20px;
