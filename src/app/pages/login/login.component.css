@@ -14,13 +14,13 @@
 label,
 input,
 .btn-submit {
-  padding: 4px 3px;
   width: 280px;
 }
 
 input {
   border: 2px solid #ededed;
   border-radius: 3px;
+  padding: 6px 10px;
 }
 
 form input {
@@ -34,4 +34,12 @@ form input {
   border-radius: 3px;
   color: white;
   text-transform: uppercase;
+}
+
+.singup {
+  color: #f490b1;
+  display: block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  text-align: center;
 }
