@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewChecked,
+  Component,
+  OnChanges,
+  OnInit,
+} from '@angular/core';
+import { Profile } from 'src/app/models/profile.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -6,12 +13,20 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './sidebard.component.html',
   styleUrls: ['./sidebard.component.css'],
 })
-export class SidebardComponent {
+export class SidebardComponent implements OnInit {
   title: string = '{ expensable }';
 
-  constructor(private authService: AuthService) {}
+  profile!: Profile;
+
+  constructor(private authService: AuthService) {
+    this.authService.getProfile().subscribe((data: any) => {
+      this.profile = data;
+    });
+  }
 
   logout(): void {
     this.authService.logout();
   }
+
+  ngOnInit(): void {}
 }
