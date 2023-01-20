@@ -1,0 +1,23 @@
+<div class="content-form">
+  <div>
+    <h1>Login</h1>
+
+    <form [formGroup]="loginForm">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        formControlName="email"
+        placeholder="example@gmail.com"
+      />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" formControlName="password" />
+
+      <button class="btn-submit" type="submit" (click)="onSubmit()">
+        Login
+      </button>
+    </form>
+    <a class="singup" href="">Sing up</a>
+  </div>
+</div>

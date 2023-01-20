@@ -6,9 +6,15 @@
   <div>
     <nav>
       <ul class="nav nav-tabs">
-        <li class="nav-item" >
-          <a class="expense-a" aria-current="page" href="#"
-           ><svg
+        <li class="nav-item">
+          <a
+            class=""
+            aria-current="page"
+            href="#"
+            role="button"
+            (click)="onTypeChange('expense')"
+          >
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -23,17 +29,18 @@
                 d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
               />
             </svg>
-            Expense</a
-          >
+            Expenses
+          </a>
         </li>
         <li class="nav-item">
           <a
             class=""
-            data-bs-toggle="updown"
+            aria-current="page"
             href="#"
             role="button"
-            aria-expanded="false"
-            ><svg
+            (click)="onTypeChange('income')"
+          >
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -48,7 +55,7 @@
                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
               />
             </svg>
-            Incoment</a
+            Incomes</a
           >
         </li>
       </ul>
@@ -58,7 +65,7 @@
   <section class="container m-4">
     <div class="d-flex justify-content-center align-item-center gap-4">
       <div class=" ">
-        <button class="return--button">
+        <button class="return--button" (click)="previousMonth()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -76,11 +83,11 @@
       </div>
 
       <div class="month-category p-2">
-        <p class="text-center">March 2022</p>
+        <p class="text-center">{{ monthName }} {{ year }}</p>
       </div>
 
       <div>
-        <button class="next--button">
+        <button class="next--button" (click)="nextMonth()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -99,31 +106,39 @@
     </div>
 
     <div class="p-4">
-      <p class="text-center mont-expenses">$1,250</p>
-      <p class="text-center text-tot"><span>Total expenses</span></p>
+      <div class="text-center mont-expenses">
+        <p [class]="type === 'expense' ? 'text-danger' : 'text-success'">
+          ${{ totalMonth | number : "1.2-2" }}
+        </p>
+      </div>
+      <p class="text-center text-tot">
+        <span>Total {{ type }}s</span>
+      </p>
     </div>
   </section>
 
   <section class="container">
     <div class="row">
       <div
-        *ngFor="let category of categories"
+        *ngFor="let sumCategory of sumsByCategory"
         class="col-xl-4 col-md-6 mb-4"
-        [ngClass]="'color-' + category.color"
+        [ngClass]="'color-' + sumCategory.color"
       >
         <div class="card border-center-info shadow h-100 py-2">
           <div class="card-body">
             <div class="d-flex justify-content-left align-items-center">
               <div class="px-3 icon-cat">
                 <img
-                  src="../../../assets/icons/{{ category.icon }}.svg"
-                  alt="rent"
+                  src="../../../assets/icons/{{ sumCategory.icon }}.svg"
+                  alt="icon"
                 />
               </div>
               <div class="px-3">
-                <h3 class="text-category">{{ category.name }}</h3>
+                <h3 class="text-category">
+                  {{ sumCategory.name | titlecase }}
+                </h3>
                 <p class="mont-category">
-                  <span>${{ category.total }}</span>
+                  <span>${{ sumCategory.total }}</span>
                 </p>
               </div>
             </div>

@@ -1,29 +1,40 @@
 <div class="sidebar">
-  <h3>{{title}}</h3>
+  <h3>{{ title }}</h3>
   <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link active">
-          <i class="bi bi-grid me-3 fs-5"></i>
-          Categories 
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <i class="bi bi-receipt me-3 fs-5"></i>
-          <span>Transactions</span> 
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          <i class="bi bi-coin me-3 fs-5"></i>
-          <span>Budgets</span> 
-        </a>
-      </li>
-    </ul>
-  <hr>
-  <div class="content">
-      <strong>Testino Diprueba</strong>
-      <p>testino@gmail.com</p>
-      <strong>Log out</strong>
+    <li>
+      <a
+        routerLink="/dashboard/categories"
+        routerLinkActive="active"
+        class="nav-link link-dark"
+      >
+        <i class="bi bi-grid me-3 fs-5"></i>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/dashboard/transactions"
+        routerLinkActive="active"
+        class="nav-link link-dark"
+      >
+        <i class="bi bi-receipt me-3 fs-5"></i>
+        <span>Transactions</span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/dashboard/budgets"
+        routerLinkActive="active"
+        class="nav-link link-dark"
+      >
+        <i class="bi bi-coin me-3 fs-5"></i>
+        <span>Budgets</span>
+      </a>
+    </li>
+  </ul>
+  <div class="perfil">
+    <strong>Testino Diprueba</strong>
+    <p>testino@gmail.com</p>
+    <button class="btn-logout" (click)="logout()">Log out</button>
   </div>
 </div>

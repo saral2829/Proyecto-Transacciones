@@ -230,6 +230,10 @@
 .nav-item {
   margin: 20px 0 0 20px;
 }
+.nav-item .expense-a {
+  border-bottom: solid 2px #d92d78 !important;
+  color: #d92d78;
+}
 .nav-item a {
   text-decoration: none;
   color: var(--gris-color);

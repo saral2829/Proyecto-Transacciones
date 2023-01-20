@@ -16,14 +16,13 @@ export interface Category {
 export interface CategoryFilter {
    id: number;
    name: string;
-   type: string;
    value: boolean;
 }
 
 export interface FilterParams {
    transactions: Array<Transaction>;
-   min_amount: number;
-   max_amount: number;
+   min_amount: number | string;
+   max_amount: number | string;
    from: string;
    to: string;
 }
