@@ -33,6 +33,7 @@ form input {
   border: none;
   border-radius: 3px;
   color: white;
+  padding: 8px 0;
   text-transform: uppercase;
 }
 
