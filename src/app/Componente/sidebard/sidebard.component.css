@@ -42,13 +42,20 @@ hr {
   position: relative;
   top: 29.4em;
 }
-.content {
+.perfil {
+  border-top: 2px solid #ededed;
   padding: 20px;
-  position: relative;
-  top: 33.2em;
+  position: absolute;
+  bottom: 1rem;
   font-size: 14px;
+  width: 100%;
 }
-.content p {
+.perfil p {
   margin-bottom: 12px;
 }
 
+.btn-logout {
+  border: none;
+  background-color: rgb(243, 244, 246);
+  font-size: 1rem;
+}
