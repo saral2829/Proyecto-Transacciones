@@ -18,6 +18,7 @@ import { DashboardComponent } from './Componente/dashboard/dashboard.component';
 import { TransactionsContentComponent } from './Componente/transactions-content/transactions-content.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component'; 
 import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },

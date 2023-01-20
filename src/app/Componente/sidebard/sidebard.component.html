@@ -32,9 +32,9 @@
       </a>
     </li>
   </ul>
-  <div class="perfil">
-    <strong>Testino Diprueba</strong>
-    <p>testino@gmail.com</p>
+  <div class="perfil" *ngIf="profile">
+    <strong>{{ profile.first_name }} {{ profile.last_name }}</strong>
+    <p>{{ profile.email }}</p>
     <button class="btn-logout" (click)="logout()">Log out</button>
   </div>
 </div>
