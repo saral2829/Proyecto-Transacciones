@@ -10,7 +10,13 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                <input type="password" class="form-control" required>
+                <div class="form-control password-style">
+                    <input matInput [type]="hide ? 'password' : 'text'" >
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </div>
+               
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">First Name</label>
