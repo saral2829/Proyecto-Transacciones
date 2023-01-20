@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { NotFoundComponent } from './Componente/not-found/not-found.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {MatIconModule} from '@angular/material/icon';
     BudgetsComponent,
     DashboardComponent,
     TransactionsContentComponent,
-    SignUpComponent
+    SignUpComponent,
+    NotFoundComponent
    
     
   ],
