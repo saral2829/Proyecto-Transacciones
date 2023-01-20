@@ -16,6 +16,7 @@ import { BudgetsComponent } from './Componente/budgets/budgets.component';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { DashboardComponent } from './Componente/dashboard/dashboard.component';
 import { TransactionsContentComponent } from './Componente/transactions-content/transactions-content.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component'; 
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TransactionsContentComponent } from './Componente/transactions-content/
     BudgetsComponent,
     DashboardComponent,
     TransactionsContentComponent,
+    SignUpComponent 
   ],
   imports: [
     BrowserModule,
