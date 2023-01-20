@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatIconModule} from '@angular/material/icon';
     BudgetsComponent,
     DashboardComponent,
     TransactionsContentComponent,
-    SignUpComponent
+    SignUpComponent,
+    NotFoundComponent
    
     
   ],
