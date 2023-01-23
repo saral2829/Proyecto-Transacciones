@@ -5,7 +5,7 @@ import {
    TransactionDetails,
    TransactionsByDate,
 } from "../../models/transaction.model";
-import categories_json from "../../categories.json";
+import { CategoryService } from "../../services/category.service";
 
 @Component({
    selector: "app-list-transactions",
@@ -16,13 +16,16 @@ export class ListTransactionsComponent {
    @Input() model: Transaction | null = null;
    @Input() filtered: Array<Transaction> = [];
 
+   categories_json: any = [];
    transactions_by_date: Array<TransactionsByDate> = [];
 
-   constructor() {}
+   constructor(private categoryService: CategoryService) {
+      this.categories_json = this.categoryService.categories;
+   }
 
    ngOnChanges() {
       this.transactions_by_date = this.groupByDate(this.filtered);
-      //console.log(this.transactions_by_date);
+      console.log(this.transactions_by_date);
    }
 
    // Group transactions by date
@@ -46,13 +49,13 @@ export class ListTransactionsComponent {
          },
          {}
       );
-      console.log(groups);
+      //console.log(groups);
       // Create an array of objects with date and transactions
       const groupArrays = Object.keys(groups).map((date) => {
          return {
             date,
             transactions: groups[date].map((transaction: Transaction) => {
-               let category: Category | any = categories_json.categories.find(
+               let category: Category | any = this.categories_json.find(
                   (category: Category) =>
                      category.id === transaction.category_id
                );

@@ -12,6 +12,9 @@
             aria-current="page"
             role="button"
             (click)="onTypeChange('expense')"
+            [class]="
+              type === 'expense' ? 'selectedTypePink' : 'selectedTypeGray'
+            "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,6 +40,9 @@
             aria-current="page"
             role="button"
             (click)="onTypeChange('income')"
+            [class]="
+              type === 'income' ? 'selectedTypePink' : 'selectedTypeGray'
+            "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +123,7 @@
     </div>
   </section>
 
-  <!-- <section class="container">
+  <section class="container">
     <div class="row">
       <div
         *ngFor="let sumCategory of sumsByCategory"
@@ -175,9 +181,9 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
-  <section class="container">
+  <!-- <section class="container">
     <div class="row">
       <div
         *ngFor="let category of filtrarCategoriasPorMes()"
@@ -207,10 +213,11 @@
       </div>
     </div>
   </section>
-</div>
+</div> -->
 
-<app-create-new-category
-  [visible]="visibleNewCategoryPopup"
-  (onClose)="closePopup()"
-  (onCreate)="createCategory($event)"
-></app-create-new-category>
+  <app-create-new-category
+    [visible]="visibleNewCategoryPopup"
+    (onClose)="closePopup()"
+    (onCreate)="createCategory($event)"
+  ></app-create-new-category>
+</div>

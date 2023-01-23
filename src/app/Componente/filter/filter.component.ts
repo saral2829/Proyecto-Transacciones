@@ -5,8 +5,7 @@ import {
    CategoryFilter,
 } from "../../models/transaction.model";
 import { FormGroup } from "@angular/forms";
-import data_json from "../../transactions.json";
-import categories_json from "../../categories.json";
+import { CategoryService } from "../../services/category.service";
 
 @Component({
    selector: "app-filter",
@@ -16,38 +15,61 @@ import categories_json from "../../categories.json";
 export class FilterComponent {
    @Output() filtered = new EventEmitter<Array<Transaction>>();
 
+   transactions: Array<Transaction> = [];
+   categories_json: any = [];
+
+   constructor(private categoryService: CategoryService) {
+      this.transactions = this.categoryService.transactions;
+      this.categories_json = this.categoryService.categories;
+   }
+
    filterForm: FormGroup | any;
-
-   transactions: Array<Transaction> = data_json.transactions;
    filtered_transactions: Array<Transaction> = [];
-
-   filter_categories: Array<CategoryFilter> = categories_json.categories.map(
-      (category) => {
-         return {
-            id: category.id,
-            name: category.name,
-            value: false,
-         };
-      }
-   );
-
    filter_params: FilterParams = {
-      transactions: this.transactions,
+      transactions: [],
       min_amount: "",
       max_amount: "",
-      from: this.transactions[0].date.split(" ")[0],
-      to: this.transactions[this.transactions.length - 1].date.split(" ")[0],
+      from: "",
+      to: "",
    };
-
-   constructor() {}
+   filter_categories: Array<CategoryFilter> = [];
 
    ngOnInit() {
+      this.filter_params =
+         this.transactions.length > 0
+            ? {
+                 transactions: this.transactions,
+                 min_amount: "",
+                 max_amount: "",
+                 from: this.transactions[0].date.split(" ")[0],
+                 to: this.transactions[this.transactions.length - 1].date.split(
+                    " "
+                 )[0],
+              }
+            : {
+                 transactions: [],
+                 min_amount: "",
+                 max_amount: "",
+                 from: "",
+                 to: "",
+              };
+
+      this.filter_categories =
+         this.categories_json.length > 0
+            ? this.categories_json.map((category: any) => {
+                 return {
+                    id: category.id,
+                    name: category.name,
+                    value: false,
+                 };
+              })
+            : [];
+
       this.filtered_transactions = this.filter_transactions(
          this.filter_params,
          this.filter_categories.map((category) => category.id)
       );
       this.filtered.emit(this.filtered_transactions);
-      //console.log(this.filtered_transactions);
    }
 
    onChange() {
@@ -62,7 +84,6 @@ export class FilterComponent {
          categories
       );
       this.filtered.emit(this.filtered_transactions);
-      //console.log(this.filtered_transactions);
    }
 
    filter_transactions(
