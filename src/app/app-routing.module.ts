@@ -41,11 +41,16 @@ const routes: Routes = [
         component: BudgetsComponent,
       },
     ],
-  },
-  {
-    path: '**',
-    component: NotFoundComponent,
-  },
+
+  },{
+    path:'**',
+    component:NotFoundComponent
+  }
+  // {
+  //   path: 'budgets',
+  //   component: BudgetsComponent,
+  // },
+
 ];
 
 @NgModule({
