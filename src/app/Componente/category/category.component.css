@@ -16,7 +16,7 @@
   --teal: #007c7f;
   --yellow: yellow;
   --cyan: cyan;
-  --light-blue: #4085f3;
+  --light-blue: #21a6e6;
 
   --red-color: #ec4649;
   --purple-color: rgb(181, 45, 181);
@@ -318,4 +318,13 @@
 .button-add {
   cursor: pointer;
   padding: 10px;
+}
+
+.selectedTypePink {
+  border-bottom: solid 5px #d92d78 !important;
+  color: #d92d78 !important;
+}
+
+.selectedTypeGray {
+  color: var(--gris-color) !important;
 }
